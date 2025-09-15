@@ -1,0 +1,442 @@
+[gd_scene load_steps=20 format=3 uid="uid://cs8vd175iv4c7"]
+
+[ext_resource type="Script" uid="uid://bgamh6o75sy05" path="res://TurnCombat/Battle/BattleMec.cs" id="1_cm282"]
+[ext_resource type="Script" uid="uid://ijfyvjhgu460" path="res://TurnCombat/Battle/PlayerOptions.cs" id="2_83bvx"]
+[ext_resource type="AudioStream" uid="uid://dlqidgrw23dto" path="res://Sounds/SFX/win.wav" id="2_tb1e2"]
+[ext_resource type="Script" uid="uid://c4v1a816ckj2o" path="res://TurnCombat/Battle/PlayerUi.cs" id="2_yn23x"]
+[ext_resource type="Script" uid="uid://c100gvleqf0bo" path="res://TurnCombat/Battle/AtacksUI.cs" id="3_v8wto"]
+[ext_resource type="Script" uid="uid://ci6qi3w1i80mv" path="res://TurnCombat/Battle/IventoryUI.cs" id="4_ce7a4"]
+[ext_resource type="PackedScene" uid="uid://d05nc1c77xwyn" path="res://TurnCombat/Battle/AttackButton.tscn" id="5_byg0v"]
+[ext_resource type="Script" uid="uid://brs0nsr5ls6os" path="res://TurnCombat/Battle/Talking.cs" id="5_tgro1"]
+[ext_resource type="PackedScene" uid="uid://cntbcq538woam" path="res://TurnCombat/Battle/HealthBar.tscn" id="6_u7v4v"]
+[ext_resource type="AudioStream" uid="uid://cxqcxhhm8jbvh" path="res://Sounds/SFX/hitHurt2.wav" id="7_r5v48"]
+[ext_resource type="PackedScene" uid="uid://cbf0jipfcakpd" path="res://TurnCombat/Battle/InventoryButton.tscn" id="7_wp0j3"]
+[ext_resource type="AudioStream" uid="uid://g4xn4taul1l6" path="res://Sounds/SFX/hitHurt.wav" id="8_gcrol"]
+[ext_resource type="PackedScene" uid="uid://cxpgyviwg6x85" path="res://TurnCombat/Battle/StaminaBar.tscn" id="8_ku3aa"]
+[ext_resource type="AudioStream" uid="uid://3infota8u2ct" path="res://Sounds/SFX/fireball.wav" id="9_nurno"]
+[ext_resource type="Texture2D" uid="uid://bkonbbm7tgjp5" path="res://Art/knightsword.png" id="11_ywldx"]
+[ext_resource type="Script" uid="uid://cqoe2enfomh5" path="res://TurnCombat/Battle/TextDesct.cs" id="12_0xqqe"]
+[ext_resource type="Texture2D" uid="uid://cu7cddwxegr88" path="res://Art/spaghetimonster.png" id="12_ywldx"]
+[ext_resource type="Script" uid="uid://dsfe5ylnpn0sv" path="res://TurnCombat/Battle/EnemyUi.cs" id="13_ecfgu"]
+[ext_resource type="AudioStream" uid="uid://bu2be47qxmtfj" path="res://Sounds/SFX/talk2.wav" id="13_gcrol"]
+
+[node name="BattleMec" type="CanvasLayer" node_paths=PackedStringArray("PlayerSprite", "EnemySprite", "turnLabel", "playerOptions", "EnemyTimer")]
+script = ExtResource("1_cm282")
+PlayerSprite = NodePath("Player")
+EnemySprite = NodePath("Enemy")
+turnLabel = NodePath("Label")
+playerOptions = NodePath("PlayerUI/PlayerOptions")
+EnemyTimer = NodePath("EnemyTimer")
+playerWinSFX = ExtResource("2_tb1e2")
+
+[node name="BG" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.223103, 0.223103, 0.223103, 1)
+metadata/_edit_lock_ = true
+
+[node name="PlayerUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_yn23x")
+metadata/_edit_lock_ = true
+
+[node name="PlayerOptions" type="Panel" parent="PlayerUI" node_paths=PackedStringArray("OptionBox", "AttackBox", "InventoryBox", "Talkbox")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.025
+anchor_top = 0.533
+anchor_right = 0.525
+anchor_bottom = 0.956
+offset_top = 0.11998
+offset_right = -3.05176e-05
+offset_bottom = -0.160004
+grow_vertical = 0
+script = ExtResource("2_83bvx")
+OptionBox = NodePath("Options")
+AttackBox = NodePath("Atacks")
+InventoryBox = NodePath("Iventory")
+Talkbox = NodePath("Talking")
+
+[node name="Options" type="Control" parent="PlayerUI/PlayerOptions"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="Attack" type="Button" parent="PlayerUI/PlayerOptions/Options"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -32.0
+offset_top = 8.0
+offset_right = 32.0
+offset_bottom = 51.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 18
+text = "Attack
+"
+
+[node name="Use" type="Button" parent="PlayerUI/PlayerOptions/Options"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -20.0
+offset_right = 32.0
+offset_bottom = 23.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 19
+text = "Use
+"
+
+[node name="Talk" type="Button" parent="PlayerUI/PlayerOptions/Options"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -32.0
+offset_top = -48.0
+offset_right = 32.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 19
+text = "Talk"
+
+[node name="Atacks" type="Control" parent="PlayerUI/PlayerOptions"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_v8wto")
+
+[node name="AttackButton" parent="PlayerUI/PlayerOptions/Atacks" instance=ExtResource("5_byg0v")]
+layout_mode = 1
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 69.0
+offset_bottom = 40.0
+attackSFXSucess = ExtResource("7_r5v48")
+
+[node name="AttackButton2" parent="PlayerUI/PlayerOptions/Atacks" instance=ExtResource("5_byg0v")]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -72.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = 38.0
+grow_horizontal = 0
+attackSFXSucess = ExtResource("8_gcrol")
+
+[node name="AttackButton3" parent="PlayerUI/PlayerOptions/Atacks" instance=ExtResource("5_byg0v")]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = -40.0
+offset_right = 72.0
+offset_bottom = -8.0
+grow_vertical = 0
+attackSFXSucess = ExtResource("7_r5v48")
+
+[node name="AttackButton4" parent="PlayerUI/PlayerOptions/Atacks" instance=ExtResource("5_byg0v")]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -72.0
+offset_top = -40.0
+offset_right = -8.0
+offset_bottom = -10.0
+grow_horizontal = 0
+grow_vertical = 0
+attackSFXSucess = ExtResource("9_nurno")
+
+[node name="Iventory" type="Control" parent="PlayerUI/PlayerOptions"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("4_ce7a4")
+
+[node name="InventoryButton" parent="PlayerUI/PlayerOptions/Iventory" instance=ExtResource("7_wp0j3")]
+layout_mode = 1
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 72.0
+offset_bottom = 40.0
+
+[node name="InventoryButton2" parent="PlayerUI/PlayerOptions/Iventory" instance=ExtResource("7_wp0j3")]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -72.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = 40.0
+grow_horizontal = 0
+
+[node name="InventoryButton3" parent="PlayerUI/PlayerOptions/Iventory" instance=ExtResource("7_wp0j3")]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = -40.0
+offset_right = 72.0
+offset_bottom = -8.0
+grow_vertical = 0
+
+[node name="InventoryButton4" parent="PlayerUI/PlayerOptions/Iventory" instance=ExtResource("7_wp0j3")]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -72.0
+offset_top = -40.0
+offset_right = -8.0
+offset_bottom = -8.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Talking" type="Control" parent="PlayerUI/PlayerOptions"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("5_tgro1")
+_talkSFX = ExtResource("13_gcrol")
+
+[node name="TalkButton" type="Button" parent="PlayerUI/PlayerOptions/Talking"]
+layout_mode = 1
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 72.0
+offset_bottom = 40.0
+theme_override_font_sizes/font_size = 9
+text = "Talk"
+
+[node name="FlirtButton" type="Button" parent="PlayerUI/PlayerOptions/Talking"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -72.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = 40.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 9
+text = "Flirt"
+
+[node name="RestButton" type="Button" parent="PlayerUI/PlayerOptions/Talking"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = -40.0
+offset_right = 72.0
+offset_bottom = -8.0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 9
+text = "Rest"
+
+[node name="InsultButton" type="Button" parent="PlayerUI/PlayerOptions/Talking"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -72.0
+offset_top = -40.0
+offset_right = -8.0
+offset_bottom = -8.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 9
+text = "Insult"
+
+[node name="PlayerStats" type="Panel" parent="PlayerUI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.356
+anchor_right = 0.4
+anchor_bottom = 0.511
+offset_top = -0.160004
+offset_bottom = 0.0399933
+
+[node name="HealthBar" parent="PlayerUI/PlayerStats" instance=ExtResource("6_u7v4v")]
+layout_mode = 1
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 128.0
+offset_bottom = 16.0
+
+[node name="StaminaBar" parent="PlayerUI/PlayerStats" instance=ExtResource("8_ku3aa")]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_right = 0.0
+anchor_bottom = 1.0
+offset_top = -16.0
+offset_right = 128.0
+offset_bottom = 0.0
+grow_vertical = 0
+
+[node name="Label" type="Label" parent="PlayerUI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.356
+anchor_right = 0.1
+anchor_bottom = 0.356
+offset_top = -24.16
+offset_right = 56.0
+offset_bottom = -0.160004
+theme_override_font_sizes/font_size = 15
+text = "Knight"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Player" type="Sprite2D" parent="."]
+position = Vector2(40, 80)
+scale = Vector2(5, 5)
+texture = ExtResource("11_ywldx")
+
+[node name="Enemy" type="Sprite2D" parent="."]
+position = Vector2(544, 168)
+scale = Vector2(3.66, 3.66)
+texture = ExtResource("12_ywldx")
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -200.0
+offset_bottom = 64.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 21
+text = "Current Turn"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EnemyTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="TextDesct" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = 0.575
+anchor_top = 0.733
+anchor_right = 0.575
+anchor_bottom = 0.733
+offset_left = -3.05176e-05
+offset_top = -31.88
+offset_right = 256.0
+offset_bottom = 32.12
+theme_override_font_sizes/font_size = 15
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+script = ExtResource("12_0xqqe")
+
+[node name="EnemyUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("13_ecfgu")
+metadata/_edit_lock_ = true
+
+[node name="EnemyStats" type="Panel" parent="EnemyUI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.6
+anchor_top = 0.178
+anchor_right = 0.9
+anchor_bottom = 0.333
+offset_top = -0.0800018
+offset_bottom = 0.119995
+metadata/_edit_group_ = true
+
+[node name="HealthBar" parent="EnemyUI/EnemyStats" instance=ExtResource("6_u7v4v")]
+layout_mode = 1
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_top = 16.0
+offset_right = 128.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="EnemyUI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.9
+anchor_top = 0.178
+anchor_right = 0.9
+anchor_bottom = 0.178
+offset_left = -64.0
+offset_top = -24.08
+offset_bottom = -0.0800018
+theme_override_font_sizes/font_size = 15
+text = "Enemy"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="ready" from="." to="PlayerUI" method="OnBattleMecReady"]
+[connection signal="ready" from="." to="PlayerUI/PlayerOptions" method="OnBattleMecReady"]
+[connection signal="ready" from="." to="PlayerUI/PlayerOptions/Atacks" method="OnBattleMecReady"]
+[connection signal="ready" from="." to="PlayerUI/PlayerOptions/Iventory" method="OnBattleMecReady"]
+[connection signal="ready" from="." to="PlayerUI/PlayerOptions/Talking" method="OnBattleMecReady"]
+[connection signal="ready" from="." to="TextDesct" method="OnBattleMecReady"]
+[connection signal="ready" from="." to="EnemyUI" method="OnBattleMecReady"]
+[connection signal="button_down" from="PlayerUI/PlayerOptions/Options/Attack" to="PlayerUI/PlayerOptions" method="OnAttackButtonDown"]
+[connection signal="button_down" from="PlayerUI/PlayerOptions/Options/Use" to="PlayerUI/PlayerOptions" method="OnUseButtonDown"]
+[connection signal="button_down" from="PlayerUI/PlayerOptions/Options/Talk" to="PlayerUI/PlayerOptions" method="OnTalkButtonDown"]
+[connection signal="button_down" from="PlayerUI/PlayerOptions/Talking/TalkButton" to="PlayerUI/PlayerOptions/Talking" method="OnTalkButtonButtonDown"]
+[connection signal="button_down" from="PlayerUI/PlayerOptions/Talking/FlirtButton" to="PlayerUI/PlayerOptions/Talking" method="OnFlirtButtonButtonDown"]
+[connection signal="button_down" from="PlayerUI/PlayerOptions/Talking/RestButton" to="PlayerUI/PlayerOptions/Talking" method="OnRestButtonButtonDown"]
+[connection signal="button_down" from="PlayerUI/PlayerOptions/Talking/InsultButton" to="PlayerUI/PlayerOptions/Talking" method="OnInsultButtonButtonDown"]
+[connection signal="timeout" from="EnemyTimer" to="." method="OnEnemyTimerTimeout"]

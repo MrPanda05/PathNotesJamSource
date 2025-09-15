@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cbf0jipfcakpd"]
+
+[ext_resource type="Script" uid="uid://c8cmtwiqrn2yb" path="res://TurnCombat/Battle/InventoryButton.cs" id="1_sw616"]
+[ext_resource type="AudioStream" uid="uid://2dbjui6ltxp5" path="res://Sounds/SFX/fail222.wav" id="2_ieh1n"]
+
+[node name="InventoryButton" type="Button"]
+offset_right = 8.0
+offset_bottom = 8.0
+theme_override_font_sizes/font_size = 9
+text = "Placeholder
+"
+script = ExtResource("1_sw616")
+_audioFail = ExtResource("2_ieh1n")
+
+[connection signal="button_down" from="." to="." method="OnButtonDown"]

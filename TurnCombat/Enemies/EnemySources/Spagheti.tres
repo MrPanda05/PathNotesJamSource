@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="EnemySource" load_steps=4 format=3 uid="uid://dbqqgi5pko16h"]
+
+[ext_resource type="Resource" uid="uid://bwjtgbpy8e8oa" path="res://TurnCombat/Attacks/AttacksSources/Kick.tres" id="1_gmo72"]
+[ext_resource type="Texture2D" uid="uid://cu7cddwxegr88" path="res://Art/spaghetimonster.png" id="1_tpyid"]
+[ext_resource type="Script" uid="uid://1n8pj3i57klh" path="res://TurnCombat/Enemies/EnemySource.cs" id="1_yemkm"]
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource("1_yemkm")
+EnemyName = "Sphagetti monster"
+MaxHealth = 175
+Health = 175
+Attacks = Array[Object]([ExtResource("1_gmo72")])
+EnemyTexture = ExtResource("1_tpyid")
+metadata/_custom_type_script = "uid://1n8pj3i57klh"

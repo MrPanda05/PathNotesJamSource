@@ -1,0 +1,138 @@
+Theme: the error is the feature
+
+
+- So it means that I have to embrace bugs and errors
+
+=========================
+
+idea 1
+
+- There is not mistake, a game where you have to choose to kill one of three people, killing the correct one, i.e a criminal. you win and go to the next round. if you fail, you fail.
+
+
+idea 2
+
+- fix computer. where you have to solve computer bugs, then if anything fails you destroy the computer
+
+
+idea 3
+
+- a game within a game. you play on a computer, a 3D game, while you are in 3d game. the outside world, is where you have your fov. then inside the computer is a extremelly bare bones shooter.
+
+where you kill bugs, then your games crashes. then you are kidnaped by gigant bugs
+
+===================
+
+idea 4
+
+- small turn based game. you are in a simulation and you know that, so you are in a simulation of a game, where the objectvie is to fight monster, to then date the dragon girl. once
+sucessfull, it turns into a nightmare, as the simulation has come corrupted.
+
+- to make things simple. you have to fight some set of monsters of each area. each area has like 3 monster, after killing all three, you get an an item, that the princess wants.
+
+at each item collected, the princess fall more and more in love/ your flirt can actually work for once.
+
+
+starts with
+
+knight talking with princess.
+
+princess is mad, tell knight to get stuff.
+
+player can then interact with her a bit more, like flirting, or just getting to know her more.
+
+then there is a option to leave, then the player gets teleported to the current area
+
+then, they just walk straight up, can find loot in some areas, then after hitting trigger a monster apear, player kill monster. monster drop something. yada yada, repeat until third monster. third moster is a boss.
+
+just do more damage/ more health, on death, drop the item needed.
+
+then, player returns to princess.
+
+this process repeats, untill the third item, where, the knight flirt finally works, and princess tell him that she loves him.
+
+then it glitches out to some creepy stuff, then the knigh has to run away
+
+==CORE== FINISHED
+
+===Overworld===
+
+Basic player controler - done
+
+Basic interaction system, player has area, once area contact an interactable. something happens - done
+
+Trigger to instantiate battle - done
+
+on battle trigger, send the enemy facing
+
+===Turn based===
+
+Turn based logic.{
+
+- A battle start
+
+- The enemy selected is correct
+
+- The player and enemy enter the scene
+
+}
+
+Player options (attack, magic/other, use item, talk)
+
+Enemies atack options/ basic ai
+
+Enemy and player stats
+
+Player have {
+
+-Healh -done
+
+-Stamina - done
+
+-Items
+
+-Attacks - each attack consume stamina | done
+
+-Talk options - try to end battle early, if fail, gain some stamina - partialy done
+
+}
+
+Enemies have {
+
+-Health - done
+
+-Attacks - done
+
+-Drop pool
+
+}
+
+
+===Story===
+
+Extremelly simple dialogue system, not really branching paths. there the main dialogue, then there options, that show some dialogues, then goes back to showing options.
+
+
+==Polish==
+-The main game loop is basicly done. Can play from start to finish, now, just need to polish
+
+Gameplay:
+-Light improvements on turn based readability
+-Make sure the enemies spawn with fullhealth, even after changing the resource. Ideal should've used the healthcomponent, too late - done
+-Make the forest, ice and volcano levels, adding small items to interact and gain items.
+-Add small animations and timers for things to be more fluid and less instant
+-add settings options at the start
+
+Sounds:
+-add sound effects
+-add music for each biome
+
+Story:
+-Edit story a bit to make more belivable
+
+Art/ui:
+-Improved UI overall
+-Make text apeear letter by letter(maybe)
+-add lizzy sprites for each text page
+-improve lizzy sprites
+-Make level sprites

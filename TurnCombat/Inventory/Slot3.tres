@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="InventorySlot" load_steps=3 format=3 uid="uid://3ckxr1jpoi6j"]
+
+[ext_resource type="Resource" uid="uid://diecpbwwhugie" path="res://TurnCombat/Items/ItemSources/HealthPotionMedium.tres" id="1_62nn2"]
+[ext_resource type="Script" uid="uid://c3y5e04m2ov3w" path="res://TurnCombat/Inventory/InventorySlot.cs" id="1_upslr"]
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource("1_upslr")
+Item = ExtResource("1_62nn2")
+Amount = 1
+metadata/_custom_type_script = "uid://c3y5e04m2ov3w"

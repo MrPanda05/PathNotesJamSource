@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="DialogueList" load_steps=7 format=3 uid="uid://t1ok6iqwo0ht"]
+
+[ext_resource type="Script" uid="uid://c8p1ou8ir7qy1" path="res://Story/Dialogues/DialogueList.cs" id="1_5dbej"]
+[ext_resource type="Texture2D" uid="uid://c42lmmkqfp3oo" path="res://Art/DragonGirlBlush.png" id="1_jykee"]
+[ext_resource type="Script" uid="uid://cpauhn8r7ewin" path="res://Story/Dialogues/Dialogue.cs" id="1_tuaf5"]
+[ext_resource type="Texture2D" uid="uid://b4uc0uvvx3pen" path="res://Art/DragonGirlAngry.png" id="3_541gs"]
+
+[sub_resource type="Resource" id="Resource_7ke4j"]
+script = ExtResource("1_tuaf5")
+Author = "Lizzy"
+Speach = "Stop it! your advances are weak!!"
+Sprite = ExtResource("1_jykee")
+metadata/_custom_type_script = "uid://cpauhn8r7ewin"
+
+[sub_resource type="Resource" id="Resource_jykee"]
+script = ExtResource("1_tuaf5")
+Author = "Lizzy"
+Speach = "Go find a human wench for you! I am royalty, you have no chance!"
+Sprite = ExtResource("3_541gs")
+metadata/_custom_type_script = "uid://cpauhn8r7ewin"
+
+[resource]
+script = ExtResource("1_5dbej")
+Dialoguess = Array[Object]([SubResource("Resource_7ke4j"), SubResource("Resource_jykee")])
+metadata/_custom_type_script = "uid://c8p1ou8ir7qy1"

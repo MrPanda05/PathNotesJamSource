@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="PlayerSource" load_steps=8 format=3 uid="uid://b3gur1h0cd5id"]
+
+[ext_resource type="Resource" uid="uid://dylvvg3ab4gfu" path="res://TurnCombat/Attacks/AttacksSources/Slap.tres" id="1_776nw"]
+[ext_resource type="Script" uid="uid://dhb3lunusqp3i" path="res://TurnCombat/Char/PlayerSource.cs" id="1_rgf72"]
+[ext_resource type="Resource" uid="uid://bwjtgbpy8e8oa" path="res://TurnCombat/Attacks/AttacksSources/Kick.tres" id="2_rfgio"]
+[ext_resource type="Resource" uid="uid://cl3pop2sbxyp7" path="res://TurnCombat/Attacks/AttacksSources/Stab.tres" id="3_y8ys8"]
+[ext_resource type="Resource" uid="uid://cadty2k7w5gn" path="res://TurnCombat/Attacks/AttacksSources/Fireball.tres" id="4_k5koe"]
+[ext_resource type="Resource" uid="uid://civkp44fh3f1v" path="res://TurnCombat/Inventory/PlayersInventory.tres" id="5_rfgio"]
+[ext_resource type="Texture2D" uid="uid://bkonbbm7tgjp5" path="res://Art/knightsword.png" id="6_y8ys8"]
+
+[resource]
+script = ExtResource("1_rgf72")
+PlayerName = "Knight"
+MaxHealth = 100
+Health = 100
+MaxStamina = 100
+Stamina = 100
+Attacks = Array[Object]([ExtResource("1_776nw"), ExtResource("2_rfgio"), ExtResource("3_y8ys8"), ExtResource("4_k5koe")])
+Inventory = ExtResource("5_rfgio")
+PlayerTexture = ExtResource("6_y8ys8")
+metadata/_custom_type_script = "uid://dhb3lunusqp3i"

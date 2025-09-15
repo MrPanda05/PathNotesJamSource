@@ -1,0 +1,54 @@
+[gd_scene load_steps=10 format=3 uid="uid://bulxdfj1ao5x5"]
+
+[ext_resource type="Script" uid="uid://crp53r3c0giq8" path="res://Overworld/Char/Player.cs" id="1_8pct4"]
+[ext_resource type="PackedScene" uid="uid://c2ssv52p5y7m3" path="res://Commons/FiniteStateMachine/FSM.tscn" id="2_fokgk"]
+[ext_resource type="Resource" uid="uid://b3gur1h0cd5id" path="res://TurnCombat/Char/PlayerSource.tres" id="2_xaf7l"]
+[ext_resource type="Texture2D" uid="uid://bkonbbm7tgjp5" path="res://Art/knightsword.png" id="3_xaf7l"]
+[ext_resource type="Script" uid="uid://derqyin4vhmbu" path="res://Overworld/Char/States/Playing.cs" id="4_53qw4"]
+[ext_resource type="PackedScene" uid="uid://c42c8r2njucy7" path="res://Overworld/Interactables/InteractableDetector.tscn" id="5_cmp0r"]
+[ext_resource type="Script" uid="uid://7cfqg7pufleg" path="res://Overworld/Char/States/Battle.cs" id="5_l6yjx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jefgy"]
+size = Vector2(21, 54)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_l6yjx"]
+radius = 25.9615
+
+[node name="PlayerOverworld" type="CharacterBody2D"]
+collision_layer = 2
+script = ExtResource("1_8pct4")
+Speed = 600.0
+Stats = ExtResource("2_xaf7l")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-0.499998, -0.5)
+scale = Vector2(2.2, 2.2)
+texture = ExtResource("3_xaf7l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 1)
+shape = SubResource("RectangleShape2D_jefgy")
+
+[node name="FSM" parent="." instance=ExtResource("2_fokgk")]
+InitialState = NodePath("Playing")
+
+[node name="Playing" type="Node" parent="FSM" node_paths=PackedStringArray("_player")]
+script = ExtResource("4_53qw4")
+_player = NodePath("../..")
+
+[node name="Battle" type="Node" parent="FSM"]
+script = ExtResource("5_l6yjx")
+
+[node name="InteractableDetector" parent="." instance=ExtResource("5_cmp0r")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableDetector"]
+shape = SubResource("CircleShape2D_l6yjx")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.675, 0.675)
+limit_left = -205
+limit_right = 3380
+limit_bottom = 5135
+drag_top_margin = 0.7
+editor_draw_limits = true
+editor_draw_drag_margin = true

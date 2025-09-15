@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="AttacksSource" load_steps=2 format=3 uid="uid://cadty2k7w5gn"]
+
+[ext_resource type="Script" uid="uid://okkawhpqdogh" path="res://TurnCombat/Attacks/AttacksSource.cs" id="1_toxmd"]
+
+[resource]
+script = ExtResource("1_toxmd")
+AttackName = "Fireball"
+Description = "It cost stamina somehow"
+Damage = 50
+StaminaCost = 50
+metadata/_custom_type_script = "uid://okkawhpqdogh"

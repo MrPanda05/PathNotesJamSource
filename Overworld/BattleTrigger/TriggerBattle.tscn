@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://26exn4fbolhn"]
+
+[ext_resource type="Script" uid="uid://cf6706lyuwlra" path="res://Overworld/BattleTrigger/TriggerBattle.cs" id="1_76u0i"]
+[ext_resource type="AudioStream" uid="uid://dyvtiv2oyh33t" path="res://Sounds/SFX/encounter.wav" id="2_f1w3v"]
+
+[node name="TriggerBattle" type="Area2D"]
+collision_layer = 8
+collision_mask = 2
+script = ExtResource("1_76u0i")
+encounterSfx = ExtResource("2_f1w3v")
+
+[connection signal="body_entered" from="." to="." method="OnBodyEntered"]
+[connection signal="body_exited" from="." to="." method="OnBodyExited"]

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="EnemySource" load_steps=4 format=3 uid="uid://bpyk3txth4amu"]
+
+[ext_resource type="Script" uid="uid://1n8pj3i57klh" path="res://TurnCombat/Enemies/EnemySource.cs" id="1_88amm"]
+[ext_resource type="Resource" uid="uid://cadty2k7w5gn" path="res://TurnCombat/Attacks/AttacksSources/Fireball.tres" id="1_cietr"]
+[ext_resource type="Texture2D" uid="uid://bg5h2bqpmpu0l" path="res://Art/hotchocolate.png" id="1_mxjn0"]
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource("1_88amm")
+EnemyName = "Hot Chocolate"
+MaxHealth = 200
+Health = 200
+Attacks = Array[Object]([ExtResource("1_cietr")])
+EnemyTexture = ExtResource("1_mxjn0")
+metadata/_custom_type_script = "uid://1n8pj3i57klh"

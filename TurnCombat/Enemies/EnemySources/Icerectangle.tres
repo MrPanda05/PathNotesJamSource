@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="EnemySource" load_steps=4 format=3 uid="uid://06ohn1tomq0u"]
+
+[ext_resource type="Resource" uid="uid://cl3pop2sbxyp7" path="res://TurnCombat/Attacks/AttacksSources/Stab.tres" id="1_108pw"]
+[ext_resource type="Texture2D" uid="uid://w6slfrrmja5i" path="res://Art/Ice rectangle.png" id="1_gvyl4"]
+[ext_resource type="Script" uid="uid://1n8pj3i57klh" path="res://TurnCombat/Enemies/EnemySource.cs" id="1_jitwb"]
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource("1_jitwb")
+EnemyName = "Ice rectangle"
+MaxHealth = 100
+Health = 100
+Attacks = Array[Object]([ExtResource("1_108pw")])
+EnemyTexture = ExtResource("1_gvyl4")
+metadata/_custom_type_script = "uid://1n8pj3i57klh"

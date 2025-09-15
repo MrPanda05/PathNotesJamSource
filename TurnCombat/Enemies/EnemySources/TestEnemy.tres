@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="EnemySource" load_steps=3 format=3 uid="uid://cjrdcekrco4ye"]
+
+[ext_resource type="Script" uid="uid://1n8pj3i57klh" path="res://TurnCombat/Enemies/EnemySource.cs" id="1_4i51a"]
+[ext_resource type="Resource" uid="uid://dylvvg3ab4gfu" path="res://TurnCombat/Attacks/AttacksSources/Slap.tres" id="1_bq44p"]
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource("1_4i51a")
+EnemyName = "TestEnemy"
+MaxHealth = 100
+Health = 100
+Attacks = Array[Object]([ExtResource("1_bq44p")])
+metadata/_custom_type_script = "uid://1n8pj3i57klh"

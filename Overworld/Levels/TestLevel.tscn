@@ -1,0 +1,24 @@
+[gd_scene load_steps=6 format=3 uid="uid://tngeorjrsys0"]
+
+[ext_resource type="PackedScene" uid="uid://bdjdd4wcpor3h" path="res://Overworld/Interactables/InteractableList/TestInteractable.tscn" id="2_vsp1w"]
+[ext_resource type="Resource" uid="uid://cjrdcekrco4ye" path="res://TurnCombat/Enemies/EnemySources/TestEnemy.tres" id="3_13gsp"]
+[ext_resource type="PackedScene" uid="uid://26exn4fbolhn" path="res://Overworld/BattleTrigger/TriggerBattle.tscn" id="3_fup4v"]
+[ext_resource type="PackedScene" uid="uid://cs8vd175iv4c7" path="res://TurnCombat/Battle/BattleMec.tscn" id="4_13gsp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_13gsp"]
+size = Vector2(1908, 170)
+
+[node name="TestLevel" type="Node2D"]
+
+[node name="TestInteractable" parent="." instance=ExtResource("2_vsp1w")]
+position = Vector2(720, 368)
+
+[node name="TriggerBattle" parent="." instance=ExtResource("3_fup4v")]
+position = Vector2(542, 749)
+Enemy = ExtResource("3_13gsp")
+BattleUI = ExtResource("4_13gsp")
+StateToGo = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerBattle"]
+position = Vector2(424, 75)
+shape = SubResource("RectangleShape2D_13gsp")

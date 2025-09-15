@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Inventory" load_steps=7 format=3 uid="uid://civkp44fh3f1v"]
+
+[ext_resource type="Script" uid="uid://c3y5e04m2ov3w" path="res://TurnCombat/Inventory/InventorySlot.cs" id="1_82yad"]
+[ext_resource type="Resource" uid="uid://c8nwauhmcbxif" path="res://TurnCombat/Inventory/Slot.tres" id="2_qhhn0"]
+[ext_resource type="Script" uid="uid://bxomewq0dxcqx" path="res://TurnCombat/Inventory/Inventory.cs" id="2_tskhh"]
+[ext_resource type="Resource" uid="uid://d6ee6qujf71f" path="res://TurnCombat/Inventory/Slot2.tres" id="3_q75k1"]
+[ext_resource type="Resource" uid="uid://3ckxr1jpoi6j" path="res://TurnCombat/Inventory/Slot3.tres" id="4_s7fo5"]
+[ext_resource type="Resource" uid="uid://cbs7v0yc0jyjb" path="res://TurnCombat/Inventory/Slot4.tres" id="5_iyo3q"]
+
+[resource]
+script = ExtResource("2_tskhh")
+InventorySlots = Array[ExtResource("1_82yad")]([ExtResource("2_qhhn0"), ExtResource("3_q75k1"), ExtResource("4_s7fo5"), ExtResource("5_iyo3q")])
+metadata/_custom_type_script = "uid://bxomewq0dxcqx"

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="InventorySlot" load_steps=3 format=3 uid="uid://d6ee6qujf71f"]
+
+[ext_resource type="Script" uid="uid://c3y5e04m2ov3w" path="res://TurnCombat/Inventory/InventorySlot.cs" id="1_pg8hn"]
+[ext_resource type="Resource" uid="uid://5hyvov4nj0jh" path="res://TurnCombat/Items/ItemSources/HealthPotionWeak.tres" id="1_u30km"]
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource("1_pg8hn")
+Item = ExtResource("1_u30km")
+Amount = 1
+metadata/_custom_type_script = "uid://c3y5e04m2ov3w"

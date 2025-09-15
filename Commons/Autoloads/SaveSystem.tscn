@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bkbvx477yxvq0"]
+
+[ext_resource type="Script" uid="uid://bcsyxuwuxha86" path="res://Commons/Autoloads/SaveSystem.cs" id="1_w5fak"]
+
+[node name="SaveSystem" type="Node"]
+script = ExtResource("1_w5fak")

@@ -1,0 +1,55 @@
+[gd_resource type="Resource" script_class="DialogueList" load_steps=13 format=3 uid="uid://boesdkjve5cah"]
+
+[ext_resource type="Texture2D" uid="uid://rdnt82eqmwyl" path="res://Art/DragonGirlchill2.png" id="1_86bxn"]
+[ext_resource type="Script" uid="uid://cpauhn8r7ewin" path="res://Story/Dialogues/Dialogue.cs" id="1_blwid"]
+[ext_resource type="Script" uid="uid://c8p1ou8ir7qy1" path="res://Story/Dialogues/DialogueList.cs" id="1_q7yng"]
+[ext_resource type="Texture2D" uid="uid://c42lmmkqfp3oo" path="res://Art/DragonGirlBlush.png" id="3_kec3h"]
+[ext_resource type="Texture2D" uid="uid://copt45vj6dhro" path="res://Art/DragonGirlsad.png" id="4_8dgix"]
+[ext_resource type="Texture2D" uid="uid://bjpfy6evqc56c" path="res://Art/DragonGirlChill.png" id="5_isg6o"]
+
+[sub_resource type="Resource" id="Resource_08f75"]
+script = ExtResource("1_blwid")
+Author = "Lizzy"
+Speach = "Wow knight! you actually did it! that's... impressive!"
+Sprite = ExtResource("1_86bxn")
+metadata/_custom_type_script = "uid://cpauhn8r7ewin"
+
+[sub_resource type="Resource" id="Resource_ronfu"]
+script = ExtResource("1_blwid")
+Author = "Lizzy"
+Speach = "Good job! Most knight's don't last this far!"
+Sprite = ExtResource("3_kec3h")
+metadata/_custom_type_script = "uid://cpauhn8r7ewin"
+
+[sub_resource type="Resource" id="Resource_blwid"]
+script = ExtResource("1_blwid")
+Author = "Lizzy"
+Speach = "They always go to another princess..."
+Sprite = ExtResource("4_8dgix")
+metadata/_custom_type_script = "uid://cpauhn8r7ewin"
+
+[sub_resource type="Resource" id="Resource_rpt55"]
+script = ExtResource("1_blwid")
+Author = "Lizzy"
+Speach = "Anyways, they are all dumb, you are too, but not too dumb!"
+Sprite = ExtResource("5_isg6o")
+metadata/_custom_type_script = "uid://cpauhn8r7ewin"
+
+[sub_resource type="Resource" id="Resource_86bxn"]
+script = ExtResource("1_blwid")
+Author = "Lizzy"
+Speach = "Now, I need you to go to the volcano and get sulfur!"
+Sprite = ExtResource("1_86bxn")
+metadata/_custom_type_script = "uid://cpauhn8r7ewin"
+
+[sub_resource type="Resource" id="Resource_kec3h"]
+script = ExtResource("1_blwid")
+Author = "Lizzy"
+Speach = "Now go go go!!"
+Sprite = ExtResource("5_isg6o")
+metadata/_custom_type_script = "uid://cpauhn8r7ewin"
+
+[resource]
+script = ExtResource("1_q7yng")
+Dialoguess = Array[Object]([SubResource("Resource_08f75"), SubResource("Resource_ronfu"), SubResource("Resource_blwid"), SubResource("Resource_rpt55"), SubResource("Resource_86bxn"), SubResource("Resource_kec3h")])
+metadata/_custom_type_script = "uid://c8p1ou8ir7qy1"

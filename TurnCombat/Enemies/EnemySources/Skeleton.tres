@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="EnemySource" load_steps=4 format=3 uid="uid://brlqcp1w4hslw"]
+
+[ext_resource type="Texture2D" uid="uid://bd8c2y8owql3j" path="res://Art/skeleton.png" id="1_1pg1g"]
+[ext_resource type="Resource" uid="uid://bwjtgbpy8e8oa" path="res://TurnCombat/Attacks/AttacksSources/Kick.tres" id="1_sqy6h"]
+[ext_resource type="Script" uid="uid://1n8pj3i57klh" path="res://TurnCombat/Enemies/EnemySource.cs" id="1_vbnxk"]
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource("1_vbnxk")
+EnemyName = "Skeleton"
+MaxHealth = 75
+Health = 75
+Attacks = Array[Object]([ExtResource("1_sqy6h")])
+EnemyTexture = ExtResource("1_1pg1g")
+metadata/_custom_type_script = "uid://1n8pj3i57klh"

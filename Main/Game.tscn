@@ -1,0 +1,31 @@
+[gd_scene load_steps=11 format=3 uid="uid://d12sg12p0acs7"]
+
+[ext_resource type="PackedScene" uid="uid://lsmd5sqj1mty" path="res://MainMenu/MainMenu.tscn" id="1_0wgfy"]
+[ext_resource type="PackedScene" uid="uid://csfrda2qri8mo" path="res://Story/StoryNode.tscn" id="2_mydax"]
+[ext_resource type="PackedScene" uid="uid://cv4s58j3q3jbm" path="res://Overworld/OverworldNode.tscn" id="3_0wgfy"]
+[ext_resource type="Resource" uid="uid://cp81mu4yyrcxr" path="res://Story/Dialogues/Ch1/ch1main.tres" id="3_ckg3m"]
+[ext_resource type="Resource" uid="uid://t1ok6iqwo0ht" path="res://Story/Dialogues/Ch1/ch1flirt.tres" id="4_gcscy"]
+[ext_resource type="Resource" uid="uid://dxbpc1gmp2qxg" path="res://Story/Dialogues/Ch1/ch1talk.tres" id="5_hiksi"]
+[ext_resource type="Resource" uid="uid://boesdkjve5cah" path="res://Story/Dialogues/Ch2/ch2Main.tres" id="6_nd422"]
+[ext_resource type="Resource" uid="uid://blgxvvason8fv" path="res://Story/Dialogues/Ch2/ch2Flirt.tres" id="7_22xp4"]
+[ext_resource type="Resource" uid="uid://bi1bysp7strpe" path="res://Story/Dialogues/Ch2/ch2Talk.tres" id="8_itt6b"]
+[ext_resource type="Resource" uid="uid://cat3p1qee6drh" path="res://Story/Dialogues/Ch3/EndDialogue.tres" id="9_gcscy"]
+
+[node name="Game" type="Node2D"]
+
+[node name="MainMenu" type="CanvasLayer" parent="."]
+
+[node name="MainMenu" parent="MainMenu" instance=ExtResource("1_0wgfy")]
+
+[node name="StoryNode" parent="." instance=ExtResource("2_mydax")]
+visible = false
+ch1Main = ExtResource("3_ckg3m")
+ch1Flirt = ExtResource("4_gcscy")
+ch1Talk = ExtResource("5_hiksi")
+ch2Main = ExtResource("6_nd422")
+ch2Flirt = ExtResource("7_22xp4")
+ch2Talk = ExtResource("8_itt6b")
+ch3Main = ExtResource("9_gcscy")
+
+[node name="OverworldNode" parent="." instance=ExtResource("3_0wgfy")]
+visible = false

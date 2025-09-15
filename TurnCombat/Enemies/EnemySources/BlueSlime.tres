@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="EnemySource" load_steps=4 format=3 uid="uid://bv1gqtb362g7i"]
+
+[ext_resource type="Script" uid="uid://1n8pj3i57klh" path="res://TurnCombat/Enemies/EnemySource.cs" id="1_7ytqc"]
+[ext_resource type="Resource" uid="uid://cl3pop2sbxyp7" path="res://TurnCombat/Attacks/AttacksSources/Stab.tres" id="1_p5icj"]
+[ext_resource type="Texture2D" uid="uid://b6608xi05gjn2" path="res://Art/blueSlime.png" id="2_6me8j"]
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource("1_7ytqc")
+EnemyName = "Blue Slime"
+MaxHealth = 150
+Health = 150
+Attacks = Array[Object]([ExtResource("1_p5icj")])
+EnemyTexture = ExtResource("2_6me8j")
+metadata/_custom_type_script = "uid://1n8pj3i57klh"

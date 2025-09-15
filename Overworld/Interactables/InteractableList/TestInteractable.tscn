@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://bdjdd4wcpor3h"]
+
+[ext_resource type="PackedScene" uid="uid://dpgwiaqumqu56" path="res://Overworld/Interactables/InteractableArea.tscn" id="1_0u2m1"]
+[ext_resource type="Texture2D" uid="uid://bj72lihbocq5u" path="res://icon.svg" id="2_lcwag"]
+[ext_resource type="Script" uid="uid://dnlkpe3tvtymb" path="res://Overworld/Interactables/InteractableList/TestInteractable.cs" id="2_xesjp"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0u2m1"]
+radius = 61.0082
+
+[node name="TestInteractable" instance=ExtResource("1_0u2m1")]
+script = ExtResource("2_xesjp")
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="0"]
+modulate = Color(0, 1, 1, 1)
+texture = ExtResource("2_lcwag")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+shape = SubResource("CircleShape2D_0u2m1")

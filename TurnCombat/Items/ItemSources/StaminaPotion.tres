@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="EnergyPotion" load_steps=3 format=3 uid="uid://cc0ko7iu7wd0c"]
+
+[ext_resource type="Script" uid="uid://cbx3oi6x1r4lu" path="res://TurnCombat/Items/EnergyPotion.cs" id="1_dg5pf"]
+[ext_resource type="AudioStream" uid="uid://drm4chl4uvjvb" path="res://Sounds/SFX/EnergyUp.wav" id="1_q84xx"]
+
+[resource]
+script = ExtResource("1_dg5pf")
+RecoverStaminaAmount = 75
+ItemName = "Energy drink"
+ItemDescription = "Recover stamina"
+SoundEffect = ExtResource("1_q84xx")
+metadata/_custom_type_script = "uid://cbx3oi6x1r4lu"

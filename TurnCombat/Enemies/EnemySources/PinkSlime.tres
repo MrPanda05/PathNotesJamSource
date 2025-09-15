@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="EnemySource" load_steps=4 format=3 uid="uid://b61blofhtd7hx"]
+
+[ext_resource type="Resource" uid="uid://bwjtgbpy8e8oa" path="res://TurnCombat/Attacks/AttacksSources/Kick.tres" id="1_1mti7"]
+[ext_resource type="Script" uid="uid://1n8pj3i57klh" path="res://TurnCombat/Enemies/EnemySource.cs" id="1_3vqvq"]
+[ext_resource type="Texture2D" uid="uid://d25mx2xvlfq6v" path="res://Art/PinkSlime.png" id="2_iejnl"]
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource("1_3vqvq")
+EnemyName = "Pink slime"
+MaxHealth = 50
+Health = 50
+Attacks = Array[Object]([ExtResource("1_1mti7")])
+EnemyTexture = ExtResource("2_iejnl")
+metadata/_custom_type_script = "uid://1n8pj3i57klh"

@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://d05nc1c77xwyn"]
+
+[ext_resource type="Script" uid="uid://dahfv6o7s5jmt" path="res://TurnCombat/Battle/AttackButton.cs" id="1_giecd"]
+[ext_resource type="AudioStream" uid="uid://dxa7eou10435x" path="res://Sounds/SFX/failstamina.wav" id="2_imn8a"]
+
+[node name="AttackButton" type="Button"]
+offset_right = 8.0
+offset_bottom = 8.0
+theme_override_font_sizes/font_size = 9
+text = "PlaceHolder"
+script = ExtResource("1_giecd")
+attackSFXFail = ExtResource("2_imn8a")
+
+[connection signal="button_down" from="." to="." method="OnButtonDown"]

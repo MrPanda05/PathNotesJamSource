@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://d2jca26gcs4fo"]
+
+[ext_resource type="Script" uid="uid://crcs3eigfmaoe" path="res://TurnCombat/BattleInitializer.cs" id="1_y15u5"]
+
+[node name="BattleInitializer" type="Node" node_paths=PackedStringArray("_battleUI")]
+script = ExtResource("1_y15u5")
+_battleUI = NodePath("BattleUI")
+
+[node name="BattleUI" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="Label" type="Label" parent="BattleUI"]
+offset_left = 362.0
+offset_top = 204.0
+offset_right = 402.0
+offset_bottom = 227.0
+text = "on battle"

@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="DialogueList" load_steps=7 format=3 uid="uid://dxbpc1gmp2qxg"]
+
+[ext_resource type="Texture2D" uid="uid://bjpfy6evqc56c" path="res://Art/DragonGirlChill.png" id="1_3lhk5"]
+[ext_resource type="Script" uid="uid://cpauhn8r7ewin" path="res://Story/Dialogues/Dialogue.cs" id="1_8i7fn"]
+[ext_resource type="Script" uid="uid://c8p1ou8ir7qy1" path="res://Story/Dialogues/DialogueList.cs" id="1_qp4od"]
+[ext_resource type="Texture2D" uid="uid://b4uc0uvvx3pen" path="res://Art/DragonGirlAngry.png" id="3_lg655"]
+
+[sub_resource type="Resource" id="Resource_na2wv"]
+script = ExtResource("1_8i7fn")
+Author = "Lizzy"
+Speach = "How do I know that is not a lime?? easy, I've asked chatRPT, he told me that it was an orange!"
+Sprite = ExtResource("1_3lhk5")
+metadata/_custom_type_script = "uid://cpauhn8r7ewin"
+
+[sub_resource type="Resource" id="Resource_8i7fn"]
+script = ExtResource("1_8i7fn")
+Author = "Lizzy"
+Speach = "Now, go! before I lose my paitiance with you!"
+Sprite = ExtResource("3_lg655")
+metadata/_custom_type_script = "uid://cpauhn8r7ewin"
+
+[resource]
+script = ExtResource("1_qp4od")
+Dialoguess = Array[Object]([SubResource("Resource_na2wv"), SubResource("Resource_8i7fn")])
+metadata/_custom_type_script = "uid://c8p1ou8ir7qy1"
