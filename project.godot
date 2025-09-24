@@ -12,7 +12,7 @@ config_version=5
 
 config/name="PathNotesJam"
 run/main_scene="uid://d12sg12p0acs7"
-config/features=PackedStringArray("4.4", "C#", "Forward Plus")
+config/features=PackedStringArray("4.5", "C#", "Forward Plus")
 boot_splash/image="uid://bl5t2dkc6vig5"
 config/icon="res://icon.svg"
 boot_splash/minimum_display_time=100
