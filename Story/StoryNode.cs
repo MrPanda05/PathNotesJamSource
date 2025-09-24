@@ -5,6 +5,9 @@ using System;
 
 namespace Story
 {
+    /// <summary>
+    /// This starts the dialogue. This starts each time Game state.
+    /// </summary>
     public partial class StoryNode : Node2D
     {
         [Export]
@@ -14,50 +17,32 @@ namespace Story
 
         [Export]
         private DialogueBox _dialogueBox;
-        [ExportGroup("Prologue")]
+        
         [Export]
-        public DialogueList prologueMain, prologueFlirt, prologueTalk;
-        [ExportGroup("Ch1")]
-        [Export]
-        public DialogueList ch1Main, ch1Flirt, ch1Talk;
-        [ExportGroup("Ch2")]
-        [Export]
-        public DialogueList ch2Main, ch2Flirt, ch2Talk;
-        [ExportGroup("Ch3")]
-        [Export]
-        public DialogueList ch3Main, ch3Flirt, ch3Talk;
+        public DialogueBook[] dialogues;
         public override void _Ready()
         {
-            GameManager.Instance.OnGameStateEnter += EnterStory;
-            GameManager.Instance.OnGameStateExit += ExitStory;
+            GameManager.Instance.OnStoryEnter += EnterStory;
+            GameManager.Instance.OnStoryExit += ExitStory;
         }
-        public void EnterStory(GameState gameState)
+        public override void _ExitTree()
         {
-            if (gameState != GameState.Story) return;
+            GameManager.Instance.OnStoryEnter -= EnterStory;
+            GameManager.Instance.OnStoryExit -= ExitStory;
+        }
+        public void EnterStory()
+        {
             GD.Print("You are in the story mode");
             Visible = true;
             _layer.Visible = true;
-            switch (currentChapter)
+            if (currentChapter <= dialogues.Length - 1)
             {
-                case 0: _dialogueBox.Initialize(prologueMain, prologueFlirt, prologueTalk);
-                    break;
-                case 1:
-                    _dialogueBox.Initialize(ch1Main, ch1Flirt, ch1Talk);
-                    break;
-                case 2:
-                    _dialogueBox.Initialize(ch2Main, ch2Flirt, ch2Talk);
-                    break;
-                case 3:
-                    _dialogueBox.Initialize(ch3Main, ch3Flirt, ch3Talk);
-                    break;
-                default:
-                    break;
+                _dialogueBox.Initialize(dialogues[currentChapter]);
             }
 
         }
-        public void ExitStory(GameState gameState)
+        public void ExitStory()
         {
-            if (gameState != GameState.Story) return;
             GD.Print("You are exiting the story mode");
             Visible = false;
             _layer.Visible = false;

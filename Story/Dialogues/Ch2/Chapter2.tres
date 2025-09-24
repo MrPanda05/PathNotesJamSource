@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="DialogueBook" load_steps=5 format=3 uid="uid://dky1qg3ewc5si"]
+
+[ext_resource type="Script" uid="uid://btbagwivet3fm" path="res://Story/Dialogues/DialogueBook.cs" id="1_6s644"]
+[ext_resource type="Resource" uid="uid://blgxvvason8fv" path="res://Story/Dialogues/Ch2/ch2Flirt.tres" id="1_821yl"]
+[ext_resource type="Resource" uid="uid://boesdkjve5cah" path="res://Story/Dialogues/Ch2/ch2Main.tres" id="2_cddy4"]
+[ext_resource type="Resource" uid="uid://bi1bysp7strpe" path="res://Story/Dialogues/Ch2/ch2Talk.tres" id="3_38ome"]
+
+[resource]
+script = ExtResource("1_6s644")
+MainList = ExtResource("2_cddy4")
+FlirtList = ExtResource("1_821yl")
+TalkList = ExtResource("3_38ome")
+metadata/_custom_type_script = "uid://btbagwivet3fm"

@@ -4,42 +4,51 @@ using System;
 
 namespace Story.Dialogues
 {
+    /// <summary>
+    /// Handles the Dialogues, it is responsible for initializing things and managing it
+    /// </summary>
     public partial class DialogueBox : Control
     {
         public DialogueList mainList, flirtList, talkList;
 
         private DialogueControl _dialogueControl;
+        private DialogueBook _bookDialogue;
 
-        public bool IsInDialogue;
-        public bool IsInSpeakMode;
+        public bool IsAnDialogueActive;
+        public bool IsOnDialogueMode;
         [Export]
         public Control Buttons;
+
+        public Action OnConversationExited;
 
         private int count = 0;
 
         public override void _Ready()
         {
-            _dialogueControl = GetNode<DialogueControl>("DialoguePanel");
+            _dialogueControl = GetNode<DialogueControl>("DialogueControl");
         }
-        public void Initialize(DialogueList main, DialogueList flirt, DialogueList talk)
+        public void Initialize(DialogueBook book)
         {
-            IsInSpeakMode = true;
+            book.BookStart();
+            IsOnDialogueMode = true;
             Buttons.Visible = false;
-            mainList = main;
-            flirtList = flirt;
-            talkList = talk;
-            _dialogueControl.currentDialogue = mainList;
+            mainList = book.MainList;
+            flirtList = book.FlirtList;
+            talkList = book.TalkList;
+            _bookDialogue = book;
             _dialogueControl.Visible = true;
             _dialogueControl.OnDialogueStart += DialogueStarted;
             _dialogueControl.OnDialogueStop += DialogueEnded;
-            _dialogueControl.Enter();
+            _dialogueControl.Enter(mainList);
         }
         public void Exit()
         {
-            IsInSpeakMode = false;
+            _bookDialogue.BookEnd();
+            IsOnDialogueMode = false;
             mainList = null;
             flirtList = null;
             talkList = null;
+            _bookDialogue = null;
             Buttons.Visible = false;
             _dialogueControl.Visible = false;
             _dialogueControl.OnDialogueStart -= DialogueStarted;
@@ -49,41 +58,35 @@ namespace Story.Dialogues
 
         private void DialogueStarted()
         {
-            IsInDialogue = true;
+            IsAnDialogueActive = true;
             Buttons.Visible = false;
             _dialogueControl.Visible = true;
         }
 
         private void DialogueEnded()
         {
-            if(flirtList == null)
-            {
-                GetTree().Quit();
-                return;
-            }
             _dialogueControl.Visible = false;
-            IsInDialogue = false;
+            IsAnDialogueActive = false;
             Buttons.Visible = true;
         }
 
         public void OnTalkButtonButtonDown()
         {
-            _dialogueControl.currentDialogue = talkList;
-            _dialogueControl.Enter();
+            _dialogueControl.Enter(talkList);
         }
         public void OnFlirtButtonButtonDown()
         {
-            _dialogueControl.currentDialogue = flirtList;
-            _dialogueControl.Enter();
+            _dialogueControl.Enter(flirtList);
         }
         public void OnExitButtonButtonDown()
         {
             Exit();
+            OnConversationExited?.Invoke();
             GameManager.Instance.ChangeState(GameState.Overworld);
         }
         public override void _PhysicsProcess(double delta)
         {
-            if (Input.IsActionJustPressed("Click") && IsInDialogue)
+            if (Input.IsActionJustPressed("Click") && IsAnDialogueActive)
             {
                 GD.Print("NextDialogue");
                 _dialogueControl.NextPage();

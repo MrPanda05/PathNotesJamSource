@@ -1,18 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://csfrda2qri8mo"]
+[gd_scene load_steps=7 format=3 uid="uid://csfrda2qri8mo"]
 
 [ext_resource type="Script" uid="uid://cj7ha64pwqk0o" path="res://Story/StoryNode.cs" id="1_c7gnd"]
-[ext_resource type="Resource" uid="uid://ca4663kj6uete" path="res://Story/Dialogues/Prologue/IntroductionList.tres" id="2_rcqax"]
+[ext_resource type="Resource" uid="uid://crp32io6xc7ev" path="res://Story/Dialogues/Prologue/Prologue.tres" id="2_rcqax"]
 [ext_resource type="PackedScene" uid="uid://sgr45lol73fw" path="res://Story/Dialogues/DialogueBox.tscn" id="2_s1qnm"]
-[ext_resource type="Resource" uid="uid://c1ugnk5chvqui" path="res://Story/Dialogues/Prologue/FlirtOption.tres" id="3_vnb6l"]
-[ext_resource type="Resource" uid="uid://dv25wjf2pja0s" path="res://Story/Dialogues/Prologue/Talkoption.tres" id="4_joskl"]
+[ext_resource type="Resource" uid="uid://bi0unbkp33b67" path="res://Story/Dialogues/Ch1/Chapter1.tres" id="3_vnb6l"]
+[ext_resource type="Resource" uid="uid://dky1qg3ewc5si" path="res://Story/Dialogues/Ch2/Chapter2.tres" id="4_joskl"]
+[ext_resource type="Resource" uid="uid://cb1rjdcqnqcck" path="res://Story/Dialogues/Ch3/Chapter3.tres" id="5_vnb6l"]
 
 [node name="StoryNode" type="Node2D" node_paths=PackedStringArray("_layer", "_dialogueBox")]
 script = ExtResource("1_c7gnd")
 _layer = NodePath("CanvasLayer")
 _dialogueBox = NodePath("CanvasLayer/DialogueBox")
-prologueMain = ExtResource("2_rcqax")
-prologueFlirt = ExtResource("3_vnb6l")
-prologueTalk = ExtResource("4_joskl")
+dialogues = Array[Object]([ExtResource("2_rcqax"), ExtResource("3_vnb6l"), ExtResource("4_joskl"), ExtResource("5_vnb6l")])
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

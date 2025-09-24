@@ -1,25 +1,13 @@
-[gd_resource type="Resource" script_class="DialogueList" load_steps=7 format=3 uid="uid://bi1bysp7strpe"]
+[gd_resource type="Resource" script_class="DialogueList" load_steps=4 format=3 uid="uid://bi1bysp7strpe"]
 
 [ext_resource type="Script" uid="uid://c8p1ou8ir7qy1" path="res://Story/Dialogues/DialogueList.cs" id="1_hlexl"]
-[ext_resource type="Texture2D" uid="uid://rdnt82eqmwyl" path="res://Art/DragonGirlchill2.png" id="1_ir7me"]
 [ext_resource type="Script" uid="uid://cpauhn8r7ewin" path="res://Story/Dialogues/Dialogue.cs" id="1_qewdg"]
-[ext_resource type="Texture2D" uid="uid://bjpfy6evqc56c" path="res://Art/DragonGirlChill.png" id="3_kbatk"]
-
-[sub_resource type="Resource" id="Resource_1irii"]
-script = ExtResource("1_qewdg")
-Author = "Lizzy"
-Speach = "Well knight... I need sulfur to make explosives"
-Sprite = ExtResource("1_ir7me")
-metadata/_custom_type_script = "uid://cpauhn8r7ewin"
 
 [sub_resource type="Resource" id="Resource_qewdg"]
 script = ExtResource("1_qewdg")
-Author = "Lizzy"
-Speach = "Why? why not! it will be fun!"
-Sprite = ExtResource("3_kbatk")
 metadata/_custom_type_script = "uid://cpauhn8r7ewin"
 
 [resource]
 script = ExtResource("1_hlexl")
-Dialoguess = Array[Object]([SubResource("Resource_1irii"), SubResource("Resource_qewdg")])
+Dialogues = Array[Object]([SubResource("Resource_qewdg")])
 metadata/_custom_type_script = "uid://c8p1ou8ir7qy1"

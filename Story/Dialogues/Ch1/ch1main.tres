@@ -1,47 +1,13 @@
-[gd_resource type="Resource" script_class="DialogueList" load_steps=11 format=3 uid="uid://cp81mu4yyrcxr"]
+[gd_resource type="Resource" script_class="DialogueList" load_steps=4 format=3 uid="uid://cp81mu4yyrcxr"]
 
-[ext_resource type="Texture2D" uid="uid://rdnt82eqmwyl" path="res://Art/DragonGirlchill2.png" id="1_n80ns"]
 [ext_resource type="Script" uid="uid://cpauhn8r7ewin" path="res://Story/Dialogues/Dialogue.cs" id="1_q5fw3"]
 [ext_resource type="Script" uid="uid://c8p1ou8ir7qy1" path="res://Story/Dialogues/DialogueList.cs" id="1_qusfm"]
-[ext_resource type="Texture2D" uid="uid://bjpfy6evqc56c" path="res://Art/DragonGirlChill.png" id="3_g60ud"]
-[ext_resource type="Texture2D" uid="uid://b4uc0uvvx3pen" path="res://Art/DragonGirlAngry.png" id="4_7sfm6"]
 
-[sub_resource type="Resource" id="Resource_7dch5"]
+[sub_resource type="Resource" id="Resource_q5fw3"]
 script = ExtResource("1_q5fw3")
-Author = "Lizzy"
-Speach = "Finally, took you long enough!!"
-Sprite = ExtResource("1_n80ns")
-metadata/_custom_type_script = "uid://cpauhn8r7ewin"
-
-[sub_resource type="Resource" id="Resource_arp64"]
-script = ExtResource("1_q5fw3")
-Author = "Lizzy"
-Speach = "Now give me that!!!"
-Sprite = ExtResource("3_g60ud")
-metadata/_custom_type_script = "uid://cpauhn8r7ewin"
-
-[sub_resource type="Resource" id="Resource_n80ns"]
-script = ExtResource("1_q5fw3")
-Author = "Lizzy"
-Speach = "By the way, since you did a good job, you will do more jobs for me!!"
-Sprite = ExtResource("1_n80ns")
-metadata/_custom_type_script = "uid://cpauhn8r7ewin"
-
-[sub_resource type="Resource" id="Resource_g60ud"]
-script = ExtResource("1_q5fw3")
-Author = "Lizzy"
-Speach = "Now, your next job is go to the ice biome there! and get me a super rare oragne that is green!"
-Sprite = ExtResource("3_g60ud")
-metadata/_custom_type_script = "uid://cpauhn8r7ewin"
-
-[sub_resource type="Resource" id="Resource_7sfm6"]
-script = ExtResource("1_q5fw3")
-Author = "Lizzy"
-Speach = "Shut up, it is not a lime! it is an green orange!"
-Sprite = ExtResource("4_7sfm6")
 metadata/_custom_type_script = "uid://cpauhn8r7ewin"
 
 [resource]
 script = ExtResource("1_qusfm")
-Dialoguess = Array[Object]([SubResource("Resource_7dch5"), SubResource("Resource_arp64"), SubResource("Resource_n80ns"), SubResource("Resource_g60ud"), SubResource("Resource_7sfm6")])
+Dialogues = Array[Object]([SubResource("Resource_q5fw3")])
 metadata/_custom_type_script = "uid://c8p1ou8ir7qy1"

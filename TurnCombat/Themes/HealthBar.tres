@@ -1,0 +1,48 @@
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://cided3pvq5f5r"]
+
+[ext_resource type="Texture2D" uid="uid://db0vq6v5xy5bt" path="res://Art/heart.png" id="1_5omt0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5omt0"]
+bg_color = Color(0.85, 0, 0.014166451, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+expand_margin_top = 2.0
+expand_margin_bottom = 2.0
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5y5ll"]
+bg_color = Color(0.8509804, 0, 0.015686275, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+expand_margin_top = 2.0
+expand_margin_bottom = 2.0
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fxsts"]
+bg_color = Color(0.50681293, 0.09115984, 0.09808729, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.8509804, 0, 0.015686275, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_top = 2.0
+expand_margin_bottom = 2.0
+anti_aliasing = false
+anti_aliasing_size = 0.01
+
+[resource]
+HSlider/constants/center_grabber = 1
+HSlider/icons/grabber = ExtResource("1_5omt0")
+HSlider/icons/grabber_disabled = ExtResource("1_5omt0")
+HSlider/icons/grabber_highlight = ExtResource("1_5omt0")
+HSlider/styles/grabber_area = SubResource("StyleBoxFlat_5omt0")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_5y5ll")
+HSlider/styles/slider = SubResource("StyleBoxFlat_fxsts")

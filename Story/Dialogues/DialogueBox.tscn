@@ -21,7 +21,7 @@ offset_right = 576.0
 offset_bottom = 272.0
 mouse_filter = 2
 
-[node name="DialoguePanel" type="Panel" parent="." node_paths=PackedStringArray("authorLabel", "speachLabel", "texture")]
+[node name="DialogueControl" type="Panel" parent="." node_paths=PackedStringArray("authorLabel", "speachLabel", "texture")]
 visible = false
 layout_mode = 1
 anchors_preset = -1
@@ -38,7 +38,7 @@ authorLabel = NodePath("Author")
 speachLabel = NodePath("Speech")
 texture = NodePath("../TextureRect")
 
-[node name="Speech" type="Label" parent="DialoguePanel"]
+[node name="Speech" type="Label" parent="DialogueControl"]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -52,7 +52,7 @@ theme_override_font_sizes/font_size = 23
 text = "sdfsdfsf"
 autowrap_mode = 2
 
-[node name="Author" type="Label" parent="DialoguePanel"]
+[node name="Author" type="Label" parent="DialogueControl"]
 layout_mode = 0
 offset_right = 128.0
 offset_bottom = 32.0

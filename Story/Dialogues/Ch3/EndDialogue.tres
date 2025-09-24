@@ -1,57 +1,13 @@
-[gd_resource type="Resource" script_class="DialogueList" load_steps=15 format=3 uid="uid://cat3p1qee6drh"]
+[gd_resource type="Resource" script_class="DialogueList" load_steps=4 format=3 uid="uid://cat3p1qee6drh"]
 
 [ext_resource type="Script" uid="uid://c8p1ou8ir7qy1" path="res://Story/Dialogues/DialogueList.cs" id="1_4lv1u"]
 [ext_resource type="Script" uid="uid://cpauhn8r7ewin" path="res://Story/Dialogues/Dialogue.cs" id="1_tqe2j"]
-[ext_resource type="Texture2D" uid="uid://rdnt82eqmwyl" path="res://Art/DragonGirlchill2.png" id="1_yxisx"]
-[ext_resource type="Texture2D" uid="uid://c42lmmkqfp3oo" path="res://Art/DragonGirlBlush.png" id="3_njvb4"]
-[ext_resource type="Texture2D" uid="uid://ilxacdn3mpf2" path="res://Art/DragonGirlLove.png" id="4_lpqop"]
-[ext_resource type="Texture2D" uid="uid://cg5ss7xosocm8" path="res://Art/DragonGirlLovedistortion.png" id="5_dd55d"]
-[ext_resource type="Texture2D" uid="uid://by6qhnmeecs4t" path="res://Art/DragonGirlDistortion2.png" id="6_62pvc"]
-[ext_resource type="Texture2D" uid="uid://x0wh3hwf1teu" path="res://Art/DragonGirlDistortion3.png" id="7_1l6ir"]
-
-[sub_resource type="Resource" id="Resource_hyola"]
-script = ExtResource("1_tqe2j")
-Author = "Lizzy"
-Speach = "You came back!! I was so worried...."
-Sprite = ExtResource("1_yxisx")
-metadata/_custom_type_script = "uid://cpauhn8r7ewin"
-
-[sub_resource type="Resource" id="Resource_n2l4v"]
-script = ExtResource("1_tqe2j")
-Author = "Lizzy"
-Speach = "Knight... you are so strong... and brave..."
-Sprite = ExtResource("3_njvb4")
-metadata/_custom_type_script = "uid://cpauhn8r7ewin"
-
-[sub_resource type="Resource" id="Resource_pp45g"]
-script = ExtResource("1_tqe2j")
-Author = "Lizzy"
-Speach = "Let's get married!! and have 2,147,483,647 children!"
-Sprite = ExtResource("4_lpqop")
-metadata/_custom_type_script = "uid://cpauhn8r7ewin"
 
 [sub_resource type="Resource" id="Resource_tqe2j"]
 script = ExtResource("1_tqe2j")
-Author = "Lizzy"
-Speach = "What happened?? why are you scared??"
-Sprite = ExtResource("5_dd55d")
-metadata/_custom_type_script = "uid://cpauhn8r7ewin"
-
-[sub_resource type="Resource" id="Resource_q6xea"]
-script = ExtResource("1_tqe2j")
-Author = "Lizzy"
-Speach = "That's what you wanted..."
-Sprite = ExtResource("6_62pvc")
-metadata/_custom_type_script = "uid://cpauhn8r7ewin"
-
-[sub_resource type="Resource" id="Resource_afvrl"]
-script = ExtResource("1_tqe2j")
-Author = "Lizzy"
-Speach = "There is no mistake... you chose this...."
-Sprite = ExtResource("7_1l6ir")
 metadata/_custom_type_script = "uid://cpauhn8r7ewin"
 
 [resource]
 script = ExtResource("1_4lv1u")
-Dialoguess = Array[Object]([SubResource("Resource_hyola"), SubResource("Resource_n2l4v"), SubResource("Resource_pp45g"), SubResource("Resource_tqe2j"), SubResource("Resource_q6xea"), SubResource("Resource_afvrl")])
+Dialogues = Array[Object]([SubResource("Resource_tqe2j")])
 metadata/_custom_type_script = "uid://c8p1ou8ir7qy1"

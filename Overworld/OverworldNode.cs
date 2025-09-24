@@ -14,11 +14,21 @@ namespace Overworld
         private Node2D _currentWorld;
         public override void _Ready()
         {
-            GameManager.Instance.OnGameStateEnter += EnterOverWorld;
-            GameManager.Instance.OnGameStateExit += ExitOverWorld;
+            GameManager.Instance.OnOverWorldEnter += EnterOverWorld;
+            GameManager.Instance.OnOverWorldExit += ExitOverWorld;
+            GameManager.Instance.OnStoryEnter += EnterStory;
+            GameManager.Instance.OnCombatExit += ExitCombat;
+        }
+        public override void _ExitTree()
+        {
+            GameManager.Instance.OnOverWorldEnter -= EnterOverWorld;
+            GameManager.Instance.OnOverWorldExit -= ExitOverWorld;
+            GameManager.Instance.OnStoryEnter -= EnterStory;
+            GameManager.Instance.OnCombatExit -= ExitCombat;
         }
         private string GetCurrentWorld(int world)
         {
+            //Here to add here new level to add more spice if needeed
             switch (world)
             {
                 case -1: return TestWorld;
@@ -28,17 +38,17 @@ namespace Overworld
             }
             return "";
         }
-        public void EnterOverWorld(GameState gameState)
+        private void EnterStory()
         {
-            if(gameState == GameState.Story)
-            {
-                Visible = false;
-                if (_currentWorld == null) return;
-                _currentWorld.QueueFree();
-                _currentWorld = null;
-                _currentWorldNum++;
-            }
-            if (gameState != GameState.Overworld) return;
+            Visible = false;
+            if (_currentWorld == null) return;
+            _currentWorld.QueueFree();
+            _currentWorld = null;
+            _currentWorldNum++;
+        }
+        public void EnterOverWorld()
+        {
+    
             if (_currentWorld != null) return;
             Visible = true;
             if(_player == null)
@@ -46,29 +56,25 @@ namespace Overworld
                 GD.Print("Create player");
                 _player = GD.Load<PackedScene>("res://Overworld/Char/PlayerOverworld.tscn").Instantiate<Player>();
                 AddChild(_player);
-                _player.SwitchState(GameState.Overworld);
                 _player.GlobalPosition = new Vector2(334, 352);
             }
             _currentWorld = GD.Load<PackedScene>(GetCurrentWorld(_currentWorldNum)).Instantiate<Node2D>();
             CallDeferred("InstantiateWorld", _currentWorld);
         }
-        private void InstantiateWorld(Node2D world)
+        private void InstantiateWorld(Node2D world) 
         {
             AddChild(world);
         }
-        public void ExitOverWorld(GameState gameState)
+
+        private void ExitCombat()
         {
-            if(gameState == GameState.Combat)
-            {
-                Visible = true;
-                GD.Print("Do nothing");
-            }
-            if(gameState == GameState.Overworld)
-            {
-                GD.Print("Exiting the overworld");
-                Visible = false;
-                //_player.GlobalPosition = new Vector2(334, 352);
-            }
+            Visible = true;
+            GD.Print("Do nothing");
+        }
+        public void ExitOverWorld()
+        {
+            GD.Print("Exiting the overworld");
+            Visible = false;
         }
     }
 }

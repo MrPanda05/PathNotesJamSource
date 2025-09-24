@@ -18,11 +18,20 @@ namespace Commons.Autoloads
 
         public RandomNumberGenerator RNG { get; private set; } = new RandomNumberGenerator();
         [Export]
-        public GameState State { get; private set; }
+        public GameState CurrentState { get; private set; }
 
-        public Action<GameState> OnGameStateEnter;//Sends the new state
-        public Action<GameState> OnGameStateExit;//Sends the old state
-        public Action OnGameStateUpdate;
+        public Action OnStoryEnter;
+        public Action OnStoryExit;
+        public Action OnOverWorldEnter;
+        public Action OnOverWorldExit;
+        public Action OnCombatEnter;
+        public Action OnCombatExit;
+        public Action OnPausedEnter;
+        public Action OnPausedExit;
+        public Action OnOtherEnter;
+        public Action OnOtherExit;
+        public Action OnNullEnter;
+        public Action OnNullExit;
 
 
         public override void _Ready()
@@ -37,12 +46,31 @@ namespace Commons.Autoloads
         }
         public void ChangeState(GameState newState)
         {
-            if (State.Equals(newState)) return;
-            OnGameStateExit?.Invoke(State);
-            State = newState;
-            OnGameStateEnter?.Invoke(newState);
-            GD.Print("Entering Gamestate: " + newState);
-            OnGameStateUpdate?.Invoke();
+            if (newState == CurrentState) return;
+
+            switch (CurrentState)
+            {
+                case GameState.Story: OnStoryExit?.Invoke(); break;
+                case GameState.Overworld: OnOverWorldExit?.Invoke(); break;
+                case GameState.Combat: OnCombatExit?.Invoke(); break;
+                case GameState.Paused: OnPausedExit?.Invoke(); break;
+                case GameState.Other: OnOtherExit?.Invoke(); break;
+                case GameState.NULL: OnNullExit?.Invoke(); break;
+            }
+
+            CurrentState = newState;
+
+            // Fire enter event for new state
+            switch (CurrentState)
+            {
+                case GameState.Story: OnStoryEnter?.Invoke(); break;
+                case GameState.Overworld: OnOverWorldEnter?.Invoke(); break;
+                case GameState.Combat: OnCombatEnter?.Invoke(); break;
+                case GameState.Paused: OnPausedEnter?.Invoke(); break;
+                case GameState.Other: OnOtherEnter?.Invoke(); break;
+                case GameState.NULL: OnNullEnter?.Invoke(); break;
+            }
+
         }
     }
 }

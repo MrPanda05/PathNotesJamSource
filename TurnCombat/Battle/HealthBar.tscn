@@ -1,28 +1,31 @@
-[gd_scene load_steps=2 format=3 uid="uid://cntbcq538woam"]
+[gd_scene load_steps=3 format=3 uid="uid://cntbcq538woam"]
 
 [ext_resource type="Script" uid="uid://bndqca6r01yqc" path="res://TurnCombat/Battle/HealthBar.cs" id="1_h2550"]
+[ext_resource type="Theme" uid="uid://cided3pvq5f5r" path="res://TurnCombat/Themes/HealthBar.tres" id="1_iof2k"]
 
 [node name="HealthBar" type="HSlider"]
 anchors_preset = -1
 anchor_right = 0.133
 anchor_bottom = 0.059
-offset_right = 0.639999
-offset_bottom = 0.279995
+offset_right = 2.8799973
+offset_bottom = 2.7600002
+theme = ExtResource("1_iof2k")
+value = 37.0
 editable = false
 scrollable = false
 script = ExtResource("1_h2550")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
-anchors_preset = -1
+anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_top = -32.0
+offset_top = -7.0
 offset_right = 64.0
-offset_bottom = 32.0
-grow_horizontal = 2
+offset_bottom = 7.0
+grow_horizontal = 0
 grow_vertical = 2
 theme_override_font_sizes/font_size = 10
 text = "100/100"

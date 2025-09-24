@@ -13,7 +13,7 @@ namespace MainMenu
         [Export]
         private AudioStreamPlayer _feedbackAudio;
 
-        private Label _labelName;
+        private Label _labelName, _labelVolume;
 
         private Action OnAudioUpdate;
 
@@ -21,13 +21,15 @@ namespace MainMenu
         {
             SaveSystem.Instance.AddNewField(BusName, 25);
             Value = (double)SaveSystem.Instance.GetValue(BusName);
-            _labelName = GetNode<Label>("Label");
+            _labelName = GetNode<Label>("name");
+            _labelVolume = GetNode<Label>("volume");
             _labelName.Text = BusName;
             if(_feedbackAudio != null)
             {
                 _feedbackAudio.Bus = AudioServer.GetBusName(BusPort);
             }
             OnAudioUpdate += MakeSure;
+            _labelVolume.Text = (double)SaveSystem.Instance.GetValue(BusName) + " %";
         }
         /// <summary>
         /// Prevents a bug where audio are desynced
@@ -54,6 +56,10 @@ namespace MainMenu
             else if (value > 0 && AudioServer.IsBusMute(BusPort))
             {
                 AudioServer.SetBusMute(BusPort, false);
+            }
+            if(_labelVolume != null)
+            {
+                _labelVolume.Text = value.ToString() + " %";
             }
         }
         public void OnDragEnded(bool value_changed)

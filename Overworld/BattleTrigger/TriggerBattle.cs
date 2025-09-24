@@ -21,7 +21,7 @@ namespace Overworld.BattleTrigger
         public AudioStream encounterSfx;
         public void OnBodyEntered(Player player)
         {
-            if (GameManager.Instance.State == GameState.Combat) return;
+            if (GameManager.Instance.CurrentState == GameState.Combat) return;
             CombatManager.Instance.InitiateBattle(player.Stats, Enemy, BattleUI, StateToGo);
             AudioPlayerGlobal.Instance.PlaySound(encounterSfx, audioBus:"SFX");
             GD.Print("Player enter, trigering battle");

@@ -30,30 +30,29 @@ namespace Overworld.Char
         public override void _Ready()
         {
             _finiteStateMachine = GetNode<FSM>("FSM");
-            GameManager.Instance.OnGameStateEnter += SwitchState;
-        }
-        public void SwitchState(GameState state)
-        {
-            if(state == GameState.Combat)
-            {
-                _finiteStateMachine.TransitioToState("Battle");
-                return;
-            }
-            if(state == GameState.Overworld)
-            {
-                _finiteStateMachine.TransitioToState("Playing");
-                return;
-            }
-            if(state == GameState.Story)
-            {
-                _finiteStateMachine.ForceNullState();
-                return;
-            }
-        }
+            GameManager.Instance.OnCombatEnter += EnterBattle;
+            GameManager.Instance.OnOverWorldEnter += EnterOverWorld;
+            GameManager.Instance.OnStoryEnter += EnterStory;
 
+        }
+        
+        private void EnterBattle()
+        {
+            _finiteStateMachine.TransitioToState("Battle");
+        }
+        private void EnterOverWorld()
+        {
+            _finiteStateMachine.TransitioToState("Playing");
+        }
+        private void EnterStory()
+        {
+            _finiteStateMachine.ForceNullState();
+        }
         public override void _ExitTree()
         {
-            GameManager.Instance.OnGameStateEnter -= SwitchState;
+            GameManager.Instance.OnCombatEnter -= EnterBattle;
+            GameManager.Instance.OnOverWorldEnter -= EnterOverWorld;
+            GameManager.Instance.OnStoryEnter -= EnterStory;
         }
     }
 }

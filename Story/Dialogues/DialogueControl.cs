@@ -3,6 +3,9 @@ using System;
 
 namespace Story.Dialogues
 {
+    /// <summary>
+    /// Control the dialogue box, showing the first text and changing pages/ text
+    /// </summary>
     public partial class DialogueControl : Panel
     {
         public DialogueList currentDialogue;
@@ -16,25 +19,40 @@ namespace Story.Dialogues
         public Action OnDialogueStop;
         [Export]
         public TextureRect texture;
-        public void Enter()
+        public void Enter(DialogueList dialogue)
         {
+            currentDialogue = dialogue;
             _currentIndex = 0;
-            authorLabel.Text = currentDialogue.Dialoguess[_currentIndex].Author;
-            speachLabel.Text = currentDialogue.Dialoguess[_currentIndex].Speach;
-            texture.Texture = currentDialogue.Dialoguess[_currentIndex].Sprite;
-            _listSize = currentDialogue.Dialoguess.Length;
+            if (currentDialogue == null)
+            {
+                GD.PrintErr("No dialogueList found");
+                return;
+            }
+            currentDialogue.OnDialogueStarts();
+            _listSize = currentDialogue.Dialogues.Length;
+            if(_listSize == 0)
+            {
+                GD.PrintErr("DialogueList with no actual dialogue");
+                return;
+            }
+            authorLabel.Text = currentDialogue.Dialogues[_currentIndex].Author;
+            speachLabel.Text = currentDialogue.Dialogues[_currentIndex].Speach;
+            texture.Texture = currentDialogue.Dialogues[_currentIndex].Sprite;
             OnDialogueStart?.Invoke();
         }
         public void NextPage()
         {
             if(_currentIndex+1 > _listSize)
             {
+                currentDialogue.OnDialoguesEnds();
+                currentDialogue = null;
                 OnDialogueStop?.Invoke();
                 return;
             }
-            authorLabel.Text = currentDialogue.Dialoguess[_currentIndex].Author;
-            speachLabel.Text = currentDialogue.Dialoguess[_currentIndex].Speach;
-            texture.Texture = currentDialogue.Dialoguess[_currentIndex].Sprite;
+            currentDialogue.Dialogues[_currentIndex].OnFlip();
+            authorLabel.Text = currentDialogue.Dialogues[_currentIndex].Author;
+            speachLabel.Text = currentDialogue.Dialogues[_currentIndex].Speach;
+            texture.Texture = currentDialogue.Dialogues[_currentIndex].Sprite;
             _currentIndex++;
         }
 

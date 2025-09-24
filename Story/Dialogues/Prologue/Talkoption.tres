@@ -1,32 +1,14 @@
-[gd_resource type="Resource" script_class="DialogueList" load_steps=8 format=3 uid="uid://dv25wjf2pja0s"]
+[gd_resource type="Resource" script_class="DialogueList" load_steps=4 format=3 uid="uid://dv25wjf2pja0s"]
 
 [ext_resource type="Script" uid="uid://cpauhn8r7ewin" path="res://Story/Dialogues/Dialogue.cs" id="1_2rcgs"]
-[ext_resource type="Texture2D" uid="uid://bjpfy6evqc56c" path="res://Art/DragonGirlChill.png" id="1_5yxti"]
 [ext_resource type="Script" uid="uid://c8p1ou8ir7qy1" path="res://Story/Dialogues/DialogueList.cs" id="1_vb6oh"]
-[ext_resource type="Texture2D" uid="uid://b4uc0uvvx3pen" path="res://Art/DragonGirlAngry.png" id="3_uj776"]
 
-[sub_resource type="Resource" id="Resource_nbkih"]
+[sub_resource type="Resource" id="Resource_2rcgs"]
 script = ExtResource("1_2rcgs")
-Author = "Lizzy"
-Speach = "Why do I need the gel??"
-Sprite = ExtResource("1_5yxti")
-metadata/_custom_type_script = "uid://cpauhn8r7ewin"
-
-[sub_resource type="Resource" id="Resource_5yxti"]
-script = ExtResource("1_2rcgs")
-Author = "Lizzy"
-Speach = "I've told you! it is none of your bussiness!! but if you insist! it is for my beufitull skin!"
-Sprite = ExtResource("3_uj776")
-metadata/_custom_type_script = "uid://cpauhn8r7ewin"
-
-[sub_resource type="Resource" id="Resource_uj776"]
-script = ExtResource("1_2rcgs")
-Author = "Lizzy"
-Speach = "Now go!! go murder some slimes! before I call my dad to get you beheaded!!"
-Sprite = ExtResource("1_5yxti")
+Speach = "dfgs"
 metadata/_custom_type_script = "uid://cpauhn8r7ewin"
 
 [resource]
 script = ExtResource("1_vb6oh")
-Dialoguess = Array[Object]([SubResource("Resource_nbkih"), SubResource("Resource_5yxti"), SubResource("Resource_uj776")])
+Dialogues = Array[Object]([SubResource("Resource_2rcgs")])
 metadata/_custom_type_script = "uid://c8p1ou8ir7qy1"

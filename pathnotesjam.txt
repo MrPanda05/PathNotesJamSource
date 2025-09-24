@@ -136,3 +136,29 @@ Art/ui:
 -add lizzy sprites for each text page
 -improve lizzy sprites
 -Make level sprites
+
+====================
+Dialogue rework/improvement
+Dialogue
+Make new resource, that holds main, flirt and talk resouses dialogues. say Book Resource or something-done
+Make the story node, hold an array of Book.-done
+Book has methods, for when it starts, a page flips and when it ends. this way, I can inherit from book to make changes based on what I need-done
+
+
+Resources{
+
+Dialogue - Single page/ represents the smallest possible data of a dialogue, with the text, sprite and author
+DialogueList - Pages, holds a list of dialogues
+DialogueBook - Holds multiple dialogueList, representing main, flirt and talk
+
+}
+
+
+
+
+
+
+
+
+
+

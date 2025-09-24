@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DialogueBook" load_steps=3 format=3 uid="uid://cb1rjdcqnqcck"]
+
+[ext_resource type="Resource" uid="uid://cat3p1qee6drh" path="res://Story/Dialogues/Ch3/EndDialogue.tres" id="1_d4j13"]
+[ext_resource type="Script" uid="uid://btbagwivet3fm" path="res://Story/Dialogues/DialogueBook.cs" id="1_yi7be"]
+
+[resource]
+script = ExtResource("1_yi7be")
+MainList = ExtResource("1_d4j13")
+metadata/_custom_type_script = "uid://btbagwivet3fm"

@@ -11,11 +11,14 @@ namespace TurnCombat
         private CanvasLayer _battleUI;
         public override void _Ready()
         {
-            GameManager.Instance.OnGameStateEnter += InitiateBattle;
+            GameManager.Instance.OnCombatEnter += InitiateBattle;
         }
-        private void InitiateBattle(GameState gameState)
+        public override void _ExitTree()
         {
-            if (gameState != GameState.Combat) return;
+            GameManager.Instance.OnCombatEnter -= InitiateBattle;
+        }
+        private void InitiateBattle()
+        {
             BattleStart();
         }
         public void BattleStart()
