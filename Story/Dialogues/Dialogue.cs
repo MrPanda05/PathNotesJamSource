@@ -18,12 +18,16 @@ namespace Story.Dialogues
 
         /// <summary>
         /// Used when this dialogue is changed by another
+        /// This does not work, because the system is wrong and shit and garbage!!
         /// </summary>
-        public virtual void OnFlip()
+        public virtual void OnFlipEnter()
         {
             GD.Print("I was flipped");
         }
-
+        public virtual void OnFlipExit()
+        {
+            GD.Print("I was flipped away from");
+        }
         public Dialogue(): this("", "", null) { }
 
         public Dialogue(string author, string speach, Texture2D sprite)

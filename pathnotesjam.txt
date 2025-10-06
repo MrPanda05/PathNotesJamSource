@@ -153,6 +153,26 @@ DialogueBook - Holds multiple dialogueList, representing main, flirt and talk
 
 }
 
+=====
+
+Combat
+
+1-Player turns
+2-Player choose one of 3 options, attack, talk, item
+3-Once used anything successfully.
+4-Disable player UI
+5-Show text of what happened
+6-Decrease health enemy
+7-Check if enemy is dead
+7.1-If dead, end battle
+8-If not dead, enemy turn
+9-Enemy attack
+10-Show text of what happened
+11-Decrease health player
+12-Check if player is dead
+12.1-If dead, end battle
+Repeats
+
 
 
 

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ChangeMusicDialogue" load_steps=3 format=3 uid="uid://b1fximwwxx04a"]
+
+[ext_resource type="Texture2D" uid="uid://bgeduyfxsymsl" path="res://Art/DragonGrill/DragonGirlFace1Chill2.png" id="1_b65bc"]
+[ext_resource type="Script" uid="uid://dw3nvxrblhr0k" path="res://Story/Dialogues/ChangeMusicDialogue.cs" id="1_rq357"]
+
+[resource]
+script = ExtResource("1_rq357")
+Author = "Lizzy"
+Speach = "So you must be the new knight, huh?"
+Sprite = ExtResource("1_b65bc")
+metadata/_custom_type_script = "uid://dw3nvxrblhr0k"

@@ -21,7 +21,7 @@ namespace TurnCombat.Battle
         public Sprite2D PlayerSprite, EnemySprite;
 
         [Export]
-        protected Label turnLabel;
+        protected Label turnLabel, textDesc;
         [Export]
         protected Panel playerOptions;
 
@@ -36,6 +36,8 @@ namespace TurnCombat.Battle
 
         [Export]
         public GameState StateToGo = GameState.Overworld;
+
+        public Action OnEnemyTurnEnded;
 
         public virtual void BattleEnter()
         {
@@ -88,18 +90,18 @@ namespace TurnCombat.Battle
         {
             OnUpdate?.Invoke();
             if (IsBattleOver) return;
-            if (EnemySource.Health <= 0)
-            {
-                BattleExit();
-                GD.Print("Player Wins");
-                return;
-            }
-            if(PlayerSource.Health <= 0)
-            {
-                BattleExit();
-                GD.Print("Enemy Wins");
-                return;
-            }
+            //if (EnemySource.Health <= 0)
+            //{
+            //    BattleExit();
+            //    GD.Print("Player Wins");
+            //    return;
+            //}
+            //if(PlayerSource.Health <= 0)
+            //{
+            //    BattleExit();
+            //    GD.Print("Enemy Wins");
+            //    return;
+            //}
             if (CurrentTurn)
             {
                 turnLabel.Text = "Enemy turn";
@@ -127,6 +129,7 @@ namespace TurnCombat.Battle
             GD.Print("Enemy thinking.....");
             UpdateText?.Invoke($"Enemy attacked you with {EnemySource.Attacks[0].AttackName}");
             PlayerSource.DecreaseHealth(GameManager.Instance.RNG.RandiRange(5, 30));
+            OnEnemyTurnEnded?.Invoke();
             NextTurn();
         }
         //public void OnAttackButtonDown()

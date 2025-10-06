@@ -1,13 +1,79 @@
-[gd_resource type="Resource" script_class="DialogueList" load_steps=4 format=3 uid="uid://boesdkjve5cah"]
+[gd_resource type="Resource" script_class="DialogueList" load_steps=19 format=3 uid="uid://boesdkjve5cah"]
 
 [ext_resource type="Script" uid="uid://cpauhn8r7ewin" path="res://Story/Dialogues/Dialogue.cs" id="1_blwid"]
+[ext_resource type="Texture2D" uid="uid://bgeduyfxsymsl" path="res://Art/DragonGrill/DragonGirlFace1Chill2.png" id="1_isg6o"]
 [ext_resource type="Script" uid="uid://c8p1ou8ir7qy1" path="res://Story/Dialogues/DialogueList.cs" id="1_q7yng"]
+[ext_resource type="Texture2D" uid="uid://b3r4n3an4y74a" path="res://Art/DragonGrill/DragonGirlFace3Blush.png" id="3_0286n"]
+[ext_resource type="Texture2D" uid="uid://ccs8wch3khyud" path="res://Art/DragonGrill/DragonGirlFace4Chill2.png" id="4_57sfs"]
+[ext_resource type="Texture2D" uid="uid://ban4gdpuqf46k" path="res://Art/DragonGrill/DragonGirlFace5Chill2.png" id="5_se5ag"]
+[ext_resource type="Texture2D" uid="uid://jn7swp8rjfiv" path="res://Art/DragonGrill/DragonGirlFace4Chill.png" id="6_fh8nb"]
+[ext_resource type="Texture2D" uid="uid://cx8kjfuoqqb8l" path="res://Art/DragonGrill/DragonGirlFace5Angry.png" id="7_loemo"]
+[ext_resource type="Texture2D" uid="uid://dvg6amwrj5buk" path="res://Art/DragonGrill/DragonGirlFace1Angry.png" id="8_kgsdm"]
 
 [sub_resource type="Resource" id="Resource_blwid"]
 script = ExtResource("1_blwid")
+Author = "Lizzy"
+Speach = "Impressive! you actually did it!!"
+Sprite = ExtResource("1_isg6o")
+metadata/_custom_type_script = "uid://cpauhn8r7ewin"
+
+[sub_resource type="Resource" id="Resource_07stp"]
+script = ExtResource("1_blwid")
+Author = "Lizzy"
+Speach = "Was worried for a moment...."
+Sprite = ExtResource("3_0286n")
+metadata/_custom_type_script = "uid://cpauhn8r7ewin"
+
+[sub_resource type="Resource" id="Resource_aebik"]
+script = ExtResource("1_blwid")
+Author = "Lizzy"
+Speach = "What? I didn't say anything, you must be crazy, I bet you live in a rubber room full of rats"
+Sprite = ExtResource("4_57sfs")
+metadata/_custom_type_script = "uid://cpauhn8r7ewin"
+
+[sub_resource type="Resource" id="Resource_xn554"]
+script = ExtResource("1_blwid")
+Author = "Lizzy"
+Speach = "Anyway, did you bring me the green orange?"
+Sprite = ExtResource("5_se5ag")
+metadata/_custom_type_script = "uid://cpauhn8r7ewin"
+
+[sub_resource type="Resource" id="Resource_34no5"]
+script = ExtResource("1_blwid")
+Author = "Lizzy"
+Speach = "Cool, now give me that!!!"
+Sprite = ExtResource("6_fh8nb")
+metadata/_custom_type_script = "uid://cpauhn8r7ewin"
+
+[sub_resource type="Resource" id="Resource_trhox"]
+script = ExtResource("1_blwid")
+Author = "Lizzy"
+Speach = "You didn't got hurt or anything, right?"
+Sprite = ExtResource("4_57sfs")
+metadata/_custom_type_script = "uid://cpauhn8r7ewin"
+
+[sub_resource type="Resource" id="Resource_dsjoe"]
+script = ExtResource("1_blwid")
+Author = "Lizzy"
+Speach = "Not that I care or anything, but because you are the only  knight left and I need you to bring me more stuffs"
+Sprite = ExtResource("7_loemo")
+metadata/_custom_type_script = "uid://cpauhn8r7ewin"
+
+[sub_resource type="Resource" id="Resource_x2jas"]
+script = ExtResource("1_blwid")
+Author = "Lizzy"
+Speach = "I want sulfur! why? to prank my dad! it will be pretty funny!"
+Sprite = ExtResource("6_fh8nb")
+metadata/_custom_type_script = "uid://cpauhn8r7ewin"
+
+[sub_resource type="Resource" id="Resource_76yi8"]
+script = ExtResource("1_blwid")
+Author = "Lizzy"
+Speach = "Now go to the volcano and get some sulfur!"
+Sprite = ExtResource("8_kgsdm")
 metadata/_custom_type_script = "uid://cpauhn8r7ewin"
 
 [resource]
 script = ExtResource("1_q7yng")
-Dialogues = Array[Object]([SubResource("Resource_blwid")])
+Dialogues = Array[Object]([SubResource("Resource_blwid"), SubResource("Resource_07stp"), SubResource("Resource_aebik"), SubResource("Resource_xn554"), SubResource("Resource_34no5"), SubResource("Resource_trhox"), SubResource("Resource_dsjoe"), SubResource("Resource_x2jas"), SubResource("Resource_76yi8")])
 metadata/_custom_type_script = "uid://c8p1ou8ir7qy1"

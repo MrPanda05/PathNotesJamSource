@@ -19,11 +19,11 @@ namespace Story.Dialogues
 
         public virtual void BookStart()
         {
-
+            MainList.Dialogues[0].OnFlipEnter();
         }
         public virtual void BookEnd()
         {
-
+            MainList.Dialogues[^1].OnFlipExit();
         }
         public DialogueBook() : this(null, null, null) { }
         public DialogueBook(DialogueList main, DialogueList flirt, DialogueList talk)

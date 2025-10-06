@@ -1,20 +1,41 @@
-[gd_resource type="Resource" script_class="DialogueList" load_steps=5 format=3 uid="uid://c1ugnk5chvqui"]
+[gd_resource type="Resource" script_class="DialogueList" load_steps=11 format=3 uid="uid://c1ugnk5chvqui"]
 
 [ext_resource type="Script" uid="uid://c8p1ou8ir7qy1" path="res://Story/Dialogues/DialogueList.cs" id="1_ls5om"]
+[ext_resource type="Texture2D" uid="uid://b3r4n3an4y74a" path="res://Art/DragonGrill/DragonGirlFace3Blush.png" id="1_p1xag"]
 [ext_resource type="Script" uid="uid://cpauhn8r7ewin" path="res://Story/Dialogues/Dialogue.cs" id="1_x0t17"]
+[ext_resource type="Texture2D" uid="uid://cuild8qvnkcrs" path="res://Art/DragonGrill/DragonGirlFace2Angry.png" id="3_uplh6"]
+[ext_resource type="Texture2D" uid="uid://cx8kjfuoqqb8l" path="res://Art/DragonGrill/DragonGirlFace5Angry.png" id="4_d424s"]
+[ext_resource type="Texture2D" uid="uid://dora4u7ek7tnu" path="res://Art/DragonGrill/DragonGirlFace5Chill.png" id="5_gjdew"]
 
 [sub_resource type="Resource" id="Resource_x0t17"]
 script = ExtResource("1_x0t17")
-Author = "Speakddder"
-Speach = "dsfsfs"
+Author = "Lizzy"
+Speach = "W-what?"
+Sprite = ExtResource("1_p1xag")
+metadata/_custom_type_script = "uid://cpauhn8r7ewin"
+
+[sub_resource type="Resource" id="Resource_i5f4j"]
+script = ExtResource("1_x0t17")
+Author = "Lizzy"
+Speach = "WHAT?!?!?! Do not do that ever again"
+Sprite = ExtResource("3_uplh6")
 metadata/_custom_type_script = "uid://cpauhn8r7ewin"
 
 [sub_resource type="Resource" id="Resource_3dpy8"]
 script = ExtResource("1_x0t17")
-Speach = "dsfsd"
+Author = "Lizzy"
+Speach = "You freaking perv!! You're lucky I don't call my dad!!"
+Sprite = ExtResource("4_d424s")
+metadata/_custom_type_script = "uid://cpauhn8r7ewin"
+
+[sub_resource type="Resource" id="Resource_letd6"]
+script = ExtResource("1_x0t17")
+Author = "Lizzy"
+Speach = "N-now go...."
+Sprite = ExtResource("5_gjdew")
 metadata/_custom_type_script = "uid://cpauhn8r7ewin"
 
 [resource]
 script = ExtResource("1_ls5om")
-Dialogues = Array[Object]([SubResource("Resource_x0t17"), SubResource("Resource_3dpy8")])
+Dialogues = Array[Object]([SubResource("Resource_x0t17"), SubResource("Resource_i5f4j"), SubResource("Resource_3dpy8"), SubResource("Resource_letd6")])
 metadata/_custom_type_script = "uid://c8p1ou8ir7qy1"

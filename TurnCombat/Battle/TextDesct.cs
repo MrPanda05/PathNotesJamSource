@@ -3,6 +3,9 @@ using System;
 
 namespace TurnCombat.Battle
 {
+    /// <summary>
+    /// Set the description of what happpens in battle
+    /// </summary>
     public partial class TextDesct : Label
     {
         private BattleMec _battlemMec;
@@ -13,6 +16,7 @@ namespace TurnCombat.Battle
         }
         public void UpdateText(string text)
         {
+            Visible = true;
             Text = text;
         }
         public override void _ExitTree()

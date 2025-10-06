@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://sgr45lol73fw"]
+[gd_scene load_steps=5 format=3 uid="uid://sgr45lol73fw"]
 
 [ext_resource type="Script" uid="uid://cmq4h144nague" path="res://Story/Dialogues/DialogueBox.cs" id="1_1qaqc"]
 [ext_resource type="Script" uid="uid://csvnhrmn1vfu5" path="res://Story/Dialogues/DialogueControl.cs" id="2_ax4kt"]
+[ext_resource type="Texture2D" uid="uid://dvg6amwrj5buk" path="res://Art/DragonGrill/DragonGirlFace1Angry.png" id="2_mvowj"]
+[ext_resource type="Texture2D" uid="uid://ct5mn57cu0u12" path="res://Art/princess_dress_5__png_overlay__by_lewis4721_dftdtc2-pre.png" id="3_0tode"]
 
 [node name="DialogueBox" type="Control" node_paths=PackedStringArray("Buttons")]
 layout_mode = 3
@@ -20,6 +22,13 @@ offset_left = 128.0
 offset_right = 576.0
 offset_bottom = 272.0
 mouse_filter = 2
+texture = ExtResource("2_mvowj")
+
+[node name="WhiteWeddingDressPng14" type="Sprite2D" parent="TextureRect"]
+position = Vector2(198, 438)
+scale = Vector2(1, 0.7145454)
+texture = ExtResource("3_0tode")
+flip_h = true
 
 [node name="DialogueControl" type="Panel" parent="." node_paths=PackedStringArray("authorLabel", "speachLabel", "texture")]
 visible = false

@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cntbcq538woam"]
+[gd_scene load_steps=4 format=3 uid="uid://cntbcq538woam"]
 
 [ext_resource type="Script" uid="uid://bndqca6r01yqc" path="res://TurnCombat/Battle/HealthBar.cs" id="1_h2550"]
 [ext_resource type="Theme" uid="uid://cided3pvq5f5r" path="res://TurnCombat/Themes/HealthBar.tres" id="1_iof2k"]
+[ext_resource type="FontFile" uid="uid://dj8tkj4cty6f5" path="res://Art/Minecraft.ttf" id="3_erdcg"]
 
 [node name="HealthBar" type="HSlider"]
 anchors_preset = -1
@@ -27,6 +28,7 @@ offset_right = 64.0
 offset_bottom = 7.0
 grow_horizontal = 0
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_erdcg")
 theme_override_font_sizes/font_size = 10
 text = "100/100"
 horizontal_alignment = 1

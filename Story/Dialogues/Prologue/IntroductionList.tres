@@ -1,15 +1,96 @@
-[gd_resource type="Resource" script_class="DialogueList" load_steps=4 format=3 uid="uid://ca4663kj6uete"]
+[gd_resource type="Resource" script_class="DialogueList" load_steps=24 format=3 uid="uid://ca4663kj6uete"]
 
+[ext_resource type="Texture2D" uid="uid://bgeduyfxsymsl" path="res://Art/DragonGrill/DragonGirlFace1Chill2.png" id="1_74wnw"]
 [ext_resource type="Script" uid="uid://cpauhn8r7ewin" path="res://Story/Dialogues/Dialogue.cs" id="1_k32uo"]
+[ext_resource type="Resource" uid="uid://b1fximwwxx04a" path="res://Story/Dialogues/Prologue/FirstDialogueMusic.tres" id="1_mf2bu"]
+[ext_resource type="Texture2D" uid="uid://dyvuc73h0qk2p" path="res://Art/DragonGrill/DragonGirlFace1Chill.png" id="2_74wnw"]
 [ext_resource type="Script" uid="uid://c8p1ou8ir7qy1" path="res://Story/Dialogues/DialogueList.cs" id="2_ieghd"]
+[ext_resource type="Texture2D" uid="uid://cx8kjfuoqqb8l" path="res://Art/DragonGrill/DragonGirlFace5Angry.png" id="4_6t51l"]
+[ext_resource type="Texture2D" uid="uid://bm43mpx6jmv5x" path="res://Art/DragonGrill/DragonGirlFace2Chill.png" id="5_u2x1f"]
+[ext_resource type="Texture2D" uid="uid://6doxy6wuf22s" path="res://Art/DragonGrill/DragonGirlFace4Angry.png" id="6_3egv8"]
+[ext_resource type="Texture2D" uid="uid://d2k3bpyxoplju" path="res://Art/DragonGrill/DragonGirlFace3Chill.png" id="7_mf2bu"]
+[ext_resource type="Texture2D" uid="uid://jn7swp8rjfiv" path="res://Art/DragonGrill/DragonGirlFace4Chill.png" id="8_0qhk2"]
+[ext_resource type="Texture2D" uid="uid://cuild8qvnkcrs" path="res://Art/DragonGrill/DragonGirlFace2Angry.png" id="9_hqof4"]
+[ext_resource type="Texture2D" uid="uid://dvg6amwrj5buk" path="res://Art/DragonGrill/DragonGirlFace1Angry.png" id="10_myl38"]
 
-[sub_resource type="Resource" id="Resource_k32uo"]
+[sub_resource type="Resource" id="Resource_ieghd"]
 script = ExtResource("1_k32uo")
-Author = "Speakesdfdsr"
-Speach = "dsfsdfs"
+Author = "Lizzy"
+Speach = "What is your name?"
+Sprite = ExtResource("2_74wnw")
+metadata/_custom_type_script = "uid://cpauhn8r7ewin"
+
+[sub_resource type="Resource" id="Resource_74wnw"]
+script = ExtResource("1_k32uo")
+Author = "Lizzy"
+Speach = "Knight? your name is knight? did your mother smoke or something?"
+Sprite = ExtResource("4_6t51l")
+metadata/_custom_type_script = "uid://cpauhn8r7ewin"
+
+[sub_resource type="Resource" id="Resource_2f8dc"]
+script = ExtResource("1_k32uo")
+Author = "Lizzy"
+Speach = "Alright, alright. I shouldn't judge someone for something they can't control, even thought I am doing just that."
+Sprite = ExtResource("2_74wnw")
+metadata/_custom_type_script = "uid://cpauhn8r7ewin"
+
+[sub_resource type="Resource" id="Resource_snrw7"]
+script = ExtResource("1_k32uo")
+Author = "Lizzy"
+Speach = "As you know, I am Lizzy!"
+Sprite = ExtResource("5_u2x1f")
+metadata/_custom_type_script = "uid://cpauhn8r7ewin"
+
+[sub_resource type="Resource" id="Resource_8h66b"]
+script = ExtResource("1_k32uo")
+Author = "Lizzy"
+Speach = "The most perfect, beautiful, gorgeous, sexy, and smart princess ever!"
+Sprite = ExtResource("6_3egv8")
+metadata/_custom_type_script = "uid://cpauhn8r7ewin"
+
+[sub_resource type="Resource" id="Resource_d4vj0"]
+script = ExtResource("1_k32uo")
+Author = "Lizzy"
+Speach = "Enough about me...."
+Sprite = ExtResource("7_mf2bu")
+metadata/_custom_type_script = "uid://cpauhn8r7ewin"
+
+[sub_resource type="Resource" id="Resource_1w54x"]
+script = ExtResource("1_k32uo")
+Author = "Lizzy"
+Speach = "Just kidding, this is all about me! you are the knight, and you will do everything I ask!"
+Sprite = ExtResource("1_74wnw")
+metadata/_custom_type_script = "uid://cpauhn8r7ewin"
+
+[sub_resource type="Resource" id="Resource_ammga"]
+script = ExtResource("1_k32uo")
+Author = "Lizzy"
+Speach = "You don't want?? well, your featheless chicken, you obey me, or I get my dad to behead you!"
+Sprite = ExtResource("4_6t51l")
+metadata/_custom_type_script = "uid://cpauhn8r7ewin"
+
+[sub_resource type="Resource" id="Resource_m27up"]
+script = ExtResource("1_k32uo")
+Author = "Lizzy"
+Speach = "Now, for your first task, I need you to kill the legendary blue slime! I need his gel!"
+Sprite = ExtResource("8_0qhk2")
+metadata/_custom_type_script = "uid://cpauhn8r7ewin"
+
+[sub_resource type="Resource" id="Resource_0l6x0"]
+script = ExtResource("1_k32uo")
+Author = "Lizzy"
+Speach = "I know it is dangerous, that's why it is your job!"
+Sprite = ExtResource("9_hqof4")
+metadata/_custom_type_script = "uid://cpauhn8r7ewin"
+
+[sub_resource type="Resource" id="Resource_tgmnm"]
+script = ExtResource("1_k32uo")
+Author = "Lizzy"
+Speach = "Shut up, stop complaining! and go already!!"
+Sprite = ExtResource("10_myl38")
 metadata/_custom_type_script = "uid://cpauhn8r7ewin"
 
 [resource]
 script = ExtResource("2_ieghd")
-Dialogues = Array[Object]([SubResource("Resource_k32uo")])
+Dialogues = Array[Object]([ExtResource("1_mf2bu"), SubResource("Resource_ieghd"), SubResource("Resource_74wnw"), SubResource("Resource_2f8dc"), SubResource("Resource_snrw7"), SubResource("Resource_8h66b"), SubResource("Resource_d4vj0"), SubResource("Resource_1w54x"), SubResource("Resource_ammga"), SubResource("Resource_m27up"), SubResource("Resource_0l6x0"), SubResource("Resource_tgmnm")])
 metadata/_custom_type_script = "uid://c8p1ou8ir7qy1"

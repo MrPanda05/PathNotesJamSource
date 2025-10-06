@@ -5,12 +5,16 @@ using TurnCombat.Attacks;
 
 namespace TurnCombat.Battle
 {
+    /// <summary>
+    /// Set the inventory
+    /// </summary>
     public partial class IventoryUI : Control
     {
         private BattleMec _battleMech;
         public void OnBattleMecReady()
         {
-            _battleMech = GetParent().GetParent().GetParent<BattleMec>();
+            Visible = false;
+            _battleMech = GetParent().GetParent().GetParent().GetParent<BattleMec>();
             var items = _battleMech.PlayerSource.Inventory.InventorySlots;
             var children = GetChildren();
             for (int i = 0; i < children.Count; i++)

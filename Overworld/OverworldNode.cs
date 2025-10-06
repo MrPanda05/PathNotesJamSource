@@ -42,6 +42,10 @@ namespace Overworld
         {
             Visible = false;
             if (_currentWorld == null) return;
+            if(_player != null)
+            {
+                _player.GlobalPosition = new Vector2(334, 352);
+            }
             _currentWorld.QueueFree();
             _currentWorld = null;
             _currentWorldNum++;
@@ -74,7 +78,7 @@ namespace Overworld
         public void ExitOverWorld()
         {
             GD.Print("Exiting the overworld");
-            Visible = false;
+            //Visible = false;
         }
     }
 }

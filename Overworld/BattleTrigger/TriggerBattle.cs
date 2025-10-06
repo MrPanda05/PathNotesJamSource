@@ -7,6 +7,9 @@ using TurnCombat.Enemies;
 
 namespace Overworld.BattleTrigger
 {
+    /// <summary>
+    /// Initiates a battle when the player enters the area
+    /// </summary>
     public partial class TriggerBattle : Area2D
     {
         [Export]
@@ -16,8 +19,6 @@ namespace Overworld.BattleTrigger
         [Export]
         public GameState StateToGo = GameState.Overworld;
         [Export]
-        public bool ResetPos = false;
-        [Export]
         public AudioStream encounterSfx;
         public void OnBodyEntered(Player player)
         {
@@ -25,10 +26,6 @@ namespace Overworld.BattleTrigger
             CombatManager.Instance.InitiateBattle(player.Stats, Enemy, BattleUI, StateToGo);
             AudioPlayerGlobal.Instance.PlaySound(encounterSfx, audioBus:"SFX");
             GD.Print("Player enter, trigering battle");
-            if (ResetPos)
-            {
-                player.GlobalPosition = new Vector2(334, 352);
-            }
         }
 
         public void OnBodyExited(Player player)

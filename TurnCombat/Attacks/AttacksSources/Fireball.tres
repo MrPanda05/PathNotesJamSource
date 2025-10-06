@@ -6,6 +6,6 @@
 script = ExtResource("1_toxmd")
 AttackName = "Fireball"
 Description = "It cost stamina somehow"
-Damage = 500
-StaminaCost = 5
+Damage = 90
+StaminaCost = 70
 metadata/_custom_type_script = "uid://okkawhpqdogh"

@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cxpgyviwg6x85"]
+[gd_scene load_steps=4 format=3 uid="uid://cxpgyviwg6x85"]
 
 [ext_resource type="Script" uid="uid://dwqym62ias6jx" path="res://TurnCombat/Battle/StaminaBar.cs" id="1_cg38s"]
 [ext_resource type="Theme" uid="uid://dwkopqxf2yxmi" path="res://TurnCombat/Themes/StaminaBar.tres" id="1_ge82i"]
+[ext_resource type="FontFile" uid="uid://dj8tkj4cty6f5" path="res://Art/Minecraft.ttf" id="3_qloig"]
 
 [node name="StaminaBar" type="HSlider"]
 anchors_preset = -1
@@ -27,6 +28,7 @@ offset_right = 64.00001
 offset_bottom = 5.2400026
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_qloig")
 theme_override_font_sizes/font_size = 10
 text = "100/100"
 horizontal_alignment = 1

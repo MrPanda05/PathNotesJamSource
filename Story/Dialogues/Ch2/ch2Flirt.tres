@@ -1,13 +1,41 @@
-[gd_resource type="Resource" script_class="DialogueList" load_steps=4 format=3 uid="uid://blgxvvason8fv"]
+[gd_resource type="Resource" script_class="DialogueList" load_steps=11 format=3 uid="uid://blgxvvason8fv"]
 
 [ext_resource type="Script" uid="uid://cpauhn8r7ewin" path="res://Story/Dialogues/Dialogue.cs" id="1_1fxbx"]
+[ext_resource type="Texture2D" uid="uid://bcohwkydt1yjd" path="res://Art/DragonGrill/DragonGirlFace5Blush.png" id="1_13iar"]
 [ext_resource type="Script" uid="uid://c8p1ou8ir7qy1" path="res://Story/Dialogues/DialogueList.cs" id="1_kde0p"]
+[ext_resource type="Texture2D" uid="uid://b3r4n3an4y74a" path="res://Art/DragonGrill/DragonGirlFace3Blush.png" id="3_g2h0x"]
+[ext_resource type="Texture2D" uid="uid://kundnxau33nw" path="res://Art/DragonGrill/DragonGirlFace3Angry.png" id="4_l3qq2"]
+[ext_resource type="Texture2D" uid="uid://dvg6amwrj5buk" path="res://Art/DragonGrill/DragonGirlFace1Angry.png" id="5_npfeh"]
 
 [sub_resource type="Resource" id="Resource_1fxbx"]
 script = ExtResource("1_1fxbx")
+Author = "Lizzy"
+Speach = "Stop it... t-this isnt' funny...."
+Sprite = ExtResource("1_13iar")
+metadata/_custom_type_script = "uid://cpauhn8r7ewin"
+
+[sub_resource type="Resource" id="Resource_55epg"]
+script = ExtResource("1_1fxbx")
+Author = "Lizzy"
+Speach = "Y-you a-are a sick perv...  s-stop embaressing me!!"
+Sprite = ExtResource("3_g2h0x")
+metadata/_custom_type_script = "uid://cpauhn8r7ewin"
+
+[sub_resource type="Resource" id="Resource_18rnw"]
+script = ExtResource("1_1fxbx")
+Author = "Lizzy"
+Speach = "Perv...."
+Sprite = ExtResource("4_l3qq2")
+metadata/_custom_type_script = "uid://cpauhn8r7ewin"
+
+[sub_resource type="Resource" id="Resource_3ow3g"]
+script = ExtResource("1_1fxbx")
+Author = "Lizzy"
+Speach = "GET OUT AND GO GET MY SULFUR!!"
+Sprite = ExtResource("5_npfeh")
 metadata/_custom_type_script = "uid://cpauhn8r7ewin"
 
 [resource]
 script = ExtResource("1_kde0p")
-Dialogues = Array[Object]([SubResource("Resource_1fxbx")])
+Dialogues = Array[Object]([SubResource("Resource_1fxbx"), SubResource("Resource_55epg"), SubResource("Resource_18rnw"), SubResource("Resource_3ow3g")])
 metadata/_custom_type_script = "uid://c8p1ou8ir7qy1"

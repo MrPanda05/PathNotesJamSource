@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://cs8vd175iv4c7"]
+[gd_scene load_steps=22 format=3 uid="uid://cs8vd175iv4c7"]
 
 [ext_resource type="Script" uid="uid://bgamh6o75sy05" path="res://TurnCombat/Battle/BattleMec.cs" id="1_cm282"]
 [ext_resource type="Script" uid="uid://ijfyvjhgu460" path="res://TurnCombat/Battle/PlayerOptions.cs" id="2_83bvx"]
@@ -14,17 +14,20 @@
 [ext_resource type="AudioStream" uid="uid://g4xn4taul1l6" path="res://Sounds/SFX/hitHurt.wav" id="8_gcrol"]
 [ext_resource type="PackedScene" uid="uid://cxpgyviwg6x85" path="res://TurnCombat/Battle/StaminaBar.tscn" id="8_ku3aa"]
 [ext_resource type="AudioStream" uid="uid://3infota8u2ct" path="res://Sounds/SFX/fireball.wav" id="9_nurno"]
+[ext_resource type="FontFile" uid="uid://dj8tkj4cty6f5" path="res://Art/Minecraft.ttf" id="11_nurno"]
 [ext_resource type="Texture2D" uid="uid://bkonbbm7tgjp5" path="res://Art/knightsword.png" id="11_ywldx"]
 [ext_resource type="Script" uid="uid://cqoe2enfomh5" path="res://TurnCombat/Battle/TextDesct.cs" id="12_0xqqe"]
 [ext_resource type="Texture2D" uid="uid://cu7cddwxegr88" path="res://Art/spaghetimonster.png" id="12_ywldx"]
 [ext_resource type="Script" uid="uid://dsfe5ylnpn0sv" path="res://TurnCombat/Battle/EnemyUi.cs" id="13_ecfgu"]
 [ext_resource type="AudioStream" uid="uid://bu2be47qxmtfj" path="res://Sounds/SFX/talk2.wav" id="13_gcrol"]
+[ext_resource type="Script" uid="uid://chpep6dcbcha0" path="res://TurnCombat/Battle/DescriptionsPlayer.cs" id="14_gjvbj"]
 
-[node name="BattleMec" type="CanvasLayer" node_paths=PackedStringArray("PlayerSprite", "EnemySprite", "turnLabel", "playerOptions", "EnemyTimer")]
+[node name="BattleMec" type="CanvasLayer" node_paths=PackedStringArray("PlayerSprite", "EnemySprite", "turnLabel", "textDesc", "playerOptions", "EnemyTimer")]
 script = ExtResource("1_cm282")
 PlayerSprite = NodePath("Player")
 EnemySprite = NodePath("Enemy")
 turnLabel = NodePath("Label")
+textDesc = NodePath("TextDesct")
 playerOptions = NodePath("PlayerUI/PlayerOptions")
 EnemyTimer = NodePath("EnemyTimer")
 playerWinSFX = ExtResource("2_tb1e2")
@@ -38,7 +41,7 @@ grow_vertical = 2
 color = Color(0.223103, 0.223103, 0.223103, 1)
 metadata/_edit_lock_ = true
 
-[node name="PlayerUI" type="Control" parent="."]
+[node name="PlayerUI" type="Control" parent="." node_paths=PackedStringArray("Options", "Buttons")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -46,24 +49,252 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("2_yn23x")
+Options = NodePath("PlayerOptions")
+Buttons = NodePath("PlayerButtons")
 metadata/_edit_lock_ = true
 
-[node name="PlayerOptions" type="Panel" parent="PlayerUI" node_paths=PackedStringArray("OptionBox", "AttackBox", "InventoryBox", "Talkbox")]
+[node name="PlayerButtons" type="Control" parent="PlayerUI"]
+anchors_preset = 0
+offset_left = 72.0
+offset_top = 192.0
+offset_right = 448.0
+offset_bottom = 344.0
+
+[node name="Button" type="Panel" parent="PlayerUI/PlayerButtons"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.025
-anchor_top = 0.533
-anchor_right = 0.525
-anchor_bottom = 0.956
-offset_top = 0.11998
-offset_right = -3.05176e-05
-offset_bottom = -0.160004
+anchor_left = -0.021000002
+anchor_top = 0.105000004
+anchor_right = 0.66
+anchor_bottom = 1.0530001
+offset_left = -0.103999615
+offset_top = 0.03999901
+offset_right = -0.16000366
+offset_bottom = -0.056015015
+mouse_filter = 2
+
+[node name="Atacks" type="Control" parent="PlayerUI/PlayerButtons/Button"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_v8wto")
+metadata/_edit_lock_ = true
+
+[node name="AttackButton" parent="PlayerUI/PlayerButtons/Button/Atacks" instance=ExtResource("5_byg0v")]
+layout_mode = 1
+offset_left = 8.0
+offset_top = 16.0
+offset_right = 74.0
+offset_bottom = 40.0
+attackSFXSucess = ExtResource("7_r5v48")
+
+[node name="AttackButton2" parent="PlayerUI/PlayerButtons/Button/Atacks" instance=ExtResource("5_byg0v")]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -80.0
+offset_top = 16.0
+offset_right = -8.0
+offset_bottom = 40.0
+grow_horizontal = 0
+attackSFXSucess = ExtResource("8_gcrol")
+
+[node name="AttackButton3" parent="PlayerUI/PlayerButtons/Button/Atacks" instance=ExtResource("5_byg0v")]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = -32.0
+offset_right = 74.0
+offset_bottom = -8.0
 grow_vertical = 0
+attackSFXSucess = ExtResource("7_r5v48")
+
+[node name="AttackButton4" parent="PlayerUI/PlayerButtons/Button/Atacks" instance=ExtResource("5_byg0v")]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -80.0
+offset_top = -32.0
+offset_right = -8.0
+offset_bottom = -8.0
+grow_horizontal = 0
+grow_vertical = 0
+attackSFXSucess = ExtResource("9_nurno")
+
+[node name="Iventory" type="Control" parent="PlayerUI/PlayerButtons/Button"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("4_ce7a4")
+metadata/_edit_lock_ = true
+
+[node name="InventoryButton" parent="PlayerUI/PlayerButtons/Button/Iventory" instance=ExtResource("7_wp0j3")]
+layout_mode = 1
+offset_left = 8.0
+offset_top = 16.0
+offset_right = 72.0
+offset_bottom = 40.0
+
+[node name="InventoryButton2" parent="PlayerUI/PlayerButtons/Button/Iventory" instance=ExtResource("7_wp0j3")]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -72.0
+offset_top = 16.0
+offset_right = -8.0
+offset_bottom = 40.0
+grow_horizontal = 0
+
+[node name="InventoryButton3" parent="PlayerUI/PlayerButtons/Button/Iventory" instance=ExtResource("7_wp0j3")]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = -40.0
+offset_right = 72.0
+offset_bottom = -16.0
+grow_vertical = 0
+
+[node name="InventoryButton4" parent="PlayerUI/PlayerButtons/Button/Iventory" instance=ExtResource("7_wp0j3")]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -72.0
+offset_top = -40.0
+offset_right = -8.0
+offset_bottom = -16.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Talking" type="Control" parent="PlayerUI/PlayerButtons/Button"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("5_tgro1")
+_talkSFX = ExtResource("13_gcrol")
+metadata/_edit_lock_ = true
+
+[node name="TalkButton" type="Button" parent="PlayerUI/PlayerButtons/Button/Talking"]
+layout_mode = 1
+offset_left = 8.0
+offset_top = 16.0
+offset_right = 72.0
+offset_bottom = 40.0
+theme_override_fonts/font = ExtResource("11_nurno")
+theme_override_font_sizes/font_size = 10
+text = "Talk"
+
+[node name="FlirtButton" type="Button" parent="PlayerUI/PlayerButtons/Button/Talking"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -72.0
+offset_top = 16.0
+offset_right = -8.0
+offset_bottom = 40.0
+grow_horizontal = 0
+theme_override_fonts/font = ExtResource("11_nurno")
+theme_override_font_sizes/font_size = 10
+text = "Flirt"
+
+[node name="RestButton" type="Button" parent="PlayerUI/PlayerButtons/Button/Talking"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = -40.0
+offset_right = 72.0
+offset_bottom = -16.0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("11_nurno")
+theme_override_font_sizes/font_size = 10
+text = "Rest"
+
+[node name="InsultButton" type="Button" parent="PlayerUI/PlayerButtons/Button/Talking"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -72.0
+offset_top = -40.0
+offset_right = -8.0
+offset_bottom = -16.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("11_nurno")
+theme_override_font_sizes/font_size = 10
+text = "Insult"
+
+[node name="Descriptions" type="Panel" parent="PlayerUI/PlayerButtons"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.68100005
+anchor_top = 0.158
+anchor_right = 1.34
+anchor_bottom = 1.0
+offset_left = -0.056030273
+offset_top = -0.016000748
+offset_right = 0.15997314
+mouse_filter = 2
+script = ExtResource("14_gjvbj")
+
+[node name="Label" type="Label" parent="PlayerUI/PlayerButtons/Descriptions"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("11_nurno")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="PlayerOptions" type="Panel" parent="PlayerUI" node_paths=PackedStringArray("PlayerButtons", "AttackBox", "InventoryBox", "Talkbox")]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.112
+anchor_top = 0.53300005
+anchor_right = 0.4
+anchor_bottom = 0.95600003
+offset_left = 0.3199997
+offset_top = 0.11997986
+offset_bottom = -0.16000366
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("2_83bvx")
-OptionBox = NodePath("Options")
-AttackBox = NodePath("Atacks")
-InventoryBox = NodePath("Iventory")
-Talkbox = NodePath("Talking")
+PlayerButtons = NodePath("../PlayerButtons")
+AttackBox = NodePath("../PlayerButtons/Button/Atacks")
+InventoryBox = NodePath("../PlayerButtons/Button/Iventory")
+Talkbox = NodePath("../PlayerButtons/Button/Talking")
 
 [node name="Options" type="Control" parent="PlayerUI/PlayerOptions"]
 layout_mode = 1
@@ -79,10 +310,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -32.0
+offset_left = -48.0
 offset_top = 8.0
-offset_right = 32.0
-offset_bottom = 51.0
+offset_right = 56.0
+offset_bottom = 42.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 18
 text = "Attack
@@ -95,10 +326,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -32.0
+offset_left = -48.0
 offset_top = -20.0
-offset_right = 32.0
-offset_bottom = 23.0
+offset_right = 56.0
+offset_bottom = 15.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 19
@@ -112,186 +343,14 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -32.0
-offset_top = -48.0
-offset_right = 32.0
+offset_left = -48.0
+offset_top = -40.0
+offset_right = 56.0
 offset_bottom = -5.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_font_sizes/font_size = 19
 text = "Talk"
-
-[node name="Atacks" type="Control" parent="PlayerUI/PlayerOptions"]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("3_v8wto")
-
-[node name="AttackButton" parent="PlayerUI/PlayerOptions/Atacks" instance=ExtResource("5_byg0v")]
-layout_mode = 1
-offset_left = 8.0
-offset_top = 8.0
-offset_right = 69.0
-offset_bottom = 40.0
-attackSFXSucess = ExtResource("7_r5v48")
-
-[node name="AttackButton2" parent="PlayerUI/PlayerOptions/Atacks" instance=ExtResource("5_byg0v")]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -72.0
-offset_top = 8.0
-offset_right = -8.0
-offset_bottom = 38.0
-grow_horizontal = 0
-attackSFXSucess = ExtResource("8_gcrol")
-
-[node name="AttackButton3" parent="PlayerUI/PlayerOptions/Atacks" instance=ExtResource("5_byg0v")]
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 8.0
-offset_top = -40.0
-offset_right = 72.0
-offset_bottom = -8.0
-grow_vertical = 0
-attackSFXSucess = ExtResource("7_r5v48")
-
-[node name="AttackButton4" parent="PlayerUI/PlayerOptions/Atacks" instance=ExtResource("5_byg0v")]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -72.0
-offset_top = -40.0
-offset_right = -8.0
-offset_bottom = -10.0
-grow_horizontal = 0
-grow_vertical = 0
-attackSFXSucess = ExtResource("9_nurno")
-
-[node name="Iventory" type="Control" parent="PlayerUI/PlayerOptions"]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("4_ce7a4")
-
-[node name="InventoryButton" parent="PlayerUI/PlayerOptions/Iventory" instance=ExtResource("7_wp0j3")]
-layout_mode = 1
-offset_left = 8.0
-offset_top = 8.0
-offset_right = 72.0
-offset_bottom = 40.0
-
-[node name="InventoryButton2" parent="PlayerUI/PlayerOptions/Iventory" instance=ExtResource("7_wp0j3")]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -72.0
-offset_top = 8.0
-offset_right = -8.0
-offset_bottom = 40.0
-grow_horizontal = 0
-
-[node name="InventoryButton3" parent="PlayerUI/PlayerOptions/Iventory" instance=ExtResource("7_wp0j3")]
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 8.0
-offset_top = -40.0
-offset_right = 72.0
-offset_bottom = -8.0
-grow_vertical = 0
-
-[node name="InventoryButton4" parent="PlayerUI/PlayerOptions/Iventory" instance=ExtResource("7_wp0j3")]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -72.0
-offset_top = -40.0
-offset_right = -8.0
-offset_bottom = -8.0
-grow_horizontal = 0
-grow_vertical = 0
-
-[node name="Talking" type="Control" parent="PlayerUI/PlayerOptions"]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("5_tgro1")
-_talkSFX = ExtResource("13_gcrol")
-
-[node name="TalkButton" type="Button" parent="PlayerUI/PlayerOptions/Talking"]
-layout_mode = 1
-offset_left = 8.0
-offset_top = 8.0
-offset_right = 72.0
-offset_bottom = 40.0
-theme_override_font_sizes/font_size = 9
-text = "Talk"
-
-[node name="FlirtButton" type="Button" parent="PlayerUI/PlayerOptions/Talking"]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -72.0
-offset_top = 8.0
-offset_right = -8.0
-offset_bottom = 40.0
-grow_horizontal = 0
-theme_override_font_sizes/font_size = 9
-text = "Flirt"
-
-[node name="RestButton" type="Button" parent="PlayerUI/PlayerOptions/Talking"]
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 8.0
-offset_top = -40.0
-offset_right = 72.0
-offset_bottom = -8.0
-grow_vertical = 0
-theme_override_font_sizes/font_size = 9
-text = "Rest"
-
-[node name="InsultButton" type="Button" parent="PlayerUI/PlayerOptions/Talking"]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -72.0
-offset_top = -40.0
-offset_right = -8.0
-offset_bottom = -8.0
-grow_horizontal = 0
-grow_vertical = 0
-theme_override_font_sizes/font_size = 9
-text = "Insult"
 
 [node name="PlayerStats" type="Panel" parent="PlayerUI"]
 layout_mode = 1
@@ -332,6 +391,7 @@ anchor_bottom = 0.356
 offset_top = -24.16
 offset_right = 56.0
 offset_bottom = -0.160004
+theme_override_fonts/font = ExtResource("11_nurno")
 theme_override_font_sizes/font_size = 15
 text = "Knight"
 horizontal_alignment = 1
@@ -348,12 +408,14 @@ scale = Vector2(3.66, 3.66)
 texture = ExtResource("12_ywldx")
 
 [node name="Label" type="Label" parent="."]
+visible = false
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -200.0
 offset_bottom = 64.0
 grow_horizontal = 2
+theme_override_fonts/font = ExtResource("11_nurno")
 theme_override_font_sizes/font_size = 21
 text = "Current Turn"
 horizontal_alignment = 1
@@ -369,10 +431,10 @@ anchor_left = 0.575
 anchor_top = 0.733
 anchor_right = 0.575
 anchor_bottom = 0.733
-offset_left = -3.05176e-05
-offset_top = -31.88
-offset_right = 256.0
-offset_bottom = 32.12
+offset_left = -256.0
+offset_top = -255.88
+offset_right = 128.0
+offset_bottom = -207.88
 theme_override_font_sizes/font_size = 15
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -420,23 +482,32 @@ anchor_bottom = 0.178
 offset_left = -64.0
 offset_top = -24.08
 offset_bottom = -0.0800018
+theme_override_fonts/font = ExtResource("11_nurno")
 theme_override_font_sizes/font_size = 15
 text = "Enemy"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [connection signal="ready" from="." to="PlayerUI" method="OnBattleMecReady"]
+[connection signal="ready" from="." to="PlayerUI/PlayerButtons/Button/Atacks" method="OnBattleMecReady"]
+[connection signal="ready" from="." to="PlayerUI/PlayerButtons/Button/Iventory" method="OnBattleMecReady"]
+[connection signal="ready" from="." to="PlayerUI/PlayerButtons/Button/Talking" method="OnBattleMecReady"]
 [connection signal="ready" from="." to="PlayerUI/PlayerOptions" method="OnBattleMecReady"]
-[connection signal="ready" from="." to="PlayerUI/PlayerOptions/Atacks" method="OnBattleMecReady"]
-[connection signal="ready" from="." to="PlayerUI/PlayerOptions/Iventory" method="OnBattleMecReady"]
-[connection signal="ready" from="." to="PlayerUI/PlayerOptions/Talking" method="OnBattleMecReady"]
 [connection signal="ready" from="." to="TextDesct" method="OnBattleMecReady"]
 [connection signal="ready" from="." to="EnemyUI" method="OnBattleMecReady"]
+[connection signal="button_down" from="PlayerUI/PlayerButtons/Button/Talking/TalkButton" to="PlayerUI/PlayerButtons/Button/Talking" method="OnTalkButtonButtonDown"]
+[connection signal="mouse_entered" from="PlayerUI/PlayerButtons/Button/Talking/TalkButton" to="PlayerUI/PlayerButtons/Button/Talking" method="OnTalkButtonMouseEntered"]
+[connection signal="mouse_exited" from="PlayerUI/PlayerButtons/Button/Talking/TalkButton" to="PlayerUI/PlayerButtons/Button/Talking" method="OnTalkButtonMouseExited"]
+[connection signal="button_down" from="PlayerUI/PlayerButtons/Button/Talking/FlirtButton" to="PlayerUI/PlayerButtons/Button/Talking" method="OnFlirtButtonButtonDown"]
+[connection signal="mouse_entered" from="PlayerUI/PlayerButtons/Button/Talking/FlirtButton" to="PlayerUI/PlayerButtons/Button/Talking" method="OnFlirtButtonMouseEntered"]
+[connection signal="mouse_exited" from="PlayerUI/PlayerButtons/Button/Talking/FlirtButton" to="PlayerUI/PlayerButtons/Button/Talking" method="OnFlirtButtonMouseExited"]
+[connection signal="button_down" from="PlayerUI/PlayerButtons/Button/Talking/RestButton" to="PlayerUI/PlayerButtons/Button/Talking" method="OnRestButtonButtonDown"]
+[connection signal="mouse_entered" from="PlayerUI/PlayerButtons/Button/Talking/RestButton" to="PlayerUI/PlayerButtons/Button/Talking" method="OnRestButtonMouseEntered"]
+[connection signal="mouse_exited" from="PlayerUI/PlayerButtons/Button/Talking/RestButton" to="PlayerUI/PlayerButtons/Button/Talking" method="OnRestButtonMouseExited"]
+[connection signal="button_down" from="PlayerUI/PlayerButtons/Button/Talking/InsultButton" to="PlayerUI/PlayerButtons/Button/Talking" method="OnInsultButtonButtonDown"]
+[connection signal="mouse_entered" from="PlayerUI/PlayerButtons/Button/Talking/InsultButton" to="PlayerUI/PlayerButtons/Button/Talking" method="OnInsultButtonMouseEntered"]
+[connection signal="mouse_exited" from="PlayerUI/PlayerButtons/Button/Talking/InsultButton" to="PlayerUI/PlayerButtons/Button/Talking" method="OnInsultButtonMouseExited"]
 [connection signal="button_down" from="PlayerUI/PlayerOptions/Options/Attack" to="PlayerUI/PlayerOptions" method="OnAttackButtonDown"]
 [connection signal="button_down" from="PlayerUI/PlayerOptions/Options/Use" to="PlayerUI/PlayerOptions" method="OnUseButtonDown"]
 [connection signal="button_down" from="PlayerUI/PlayerOptions/Options/Talk" to="PlayerUI/PlayerOptions" method="OnTalkButtonDown"]
-[connection signal="button_down" from="PlayerUI/PlayerOptions/Talking/TalkButton" to="PlayerUI/PlayerOptions/Talking" method="OnTalkButtonButtonDown"]
-[connection signal="button_down" from="PlayerUI/PlayerOptions/Talking/FlirtButton" to="PlayerUI/PlayerOptions/Talking" method="OnFlirtButtonButtonDown"]
-[connection signal="button_down" from="PlayerUI/PlayerOptions/Talking/RestButton" to="PlayerUI/PlayerOptions/Talking" method="OnRestButtonButtonDown"]
-[connection signal="button_down" from="PlayerUI/PlayerOptions/Talking/InsultButton" to="PlayerUI/PlayerOptions/Talking" method="OnInsultButtonButtonDown"]
 [connection signal="timeout" from="EnemyTimer" to="." method="OnEnemyTimerTimeout"]

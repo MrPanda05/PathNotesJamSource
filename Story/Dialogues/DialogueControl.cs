@@ -49,7 +49,7 @@ namespace Story.Dialogues
                 OnDialogueStop?.Invoke();
                 return;
             }
-            currentDialogue.Dialogues[_currentIndex].OnFlip();
+            //currentDialogue.Dialogues[_currentIndex].OnFlipEnter();
             authorLabel.Text = currentDialogue.Dialogues[_currentIndex].Author;
             speachLabel.Text = currentDialogue.Dialogues[_currentIndex].Speach;
             texture.Texture = currentDialogue.Dialogues[_currentIndex].Sprite;

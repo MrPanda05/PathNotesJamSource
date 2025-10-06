@@ -5,8 +5,8 @@
 
 [resource]
 script = ExtResource("1_kj4h3")
-HealAmount = 100
-ItemName = "Strong health potion"
-ItemDescription = "heals a lot"
+HealAmount = 105
+ItemName = "S+ health potion"
+ItemDescription = "Heals 105hp"
 SoundEffect = ExtResource("1_h6udy")
 metadata/_custom_type_script = "uid://cip27n7twho5n"

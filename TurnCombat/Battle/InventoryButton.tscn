@@ -1,15 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://cbf0jipfcakpd"]
+[gd_scene load_steps=4 format=3 uid="uid://cbf0jipfcakpd"]
 
+[ext_resource type="FontFile" uid="uid://dj8tkj4cty6f5" path="res://Art/Minecraft.ttf" id="1_014vv"]
 [ext_resource type="Script" uid="uid://c8cmtwiqrn2yb" path="res://TurnCombat/Battle/InventoryButton.cs" id="1_sw616"]
 [ext_resource type="AudioStream" uid="uid://2dbjui6ltxp5" path="res://Sounds/SFX/fail222.wav" id="2_ieh1n"]
 
 [node name="InventoryButton" type="Button"]
 offset_right = 8.0
 offset_bottom = 8.0
-theme_override_font_sizes/font_size = 9
+theme_override_fonts/font = ExtResource("1_014vv")
+theme_override_font_sizes/font_size = 8
 text = "Placeholder
 "
 script = ExtResource("1_sw616")
 _audioFail = ExtResource("2_ieh1n")
 
 [connection signal="button_down" from="." to="." method="OnButtonDown"]
+[connection signal="mouse_entered" from="." to="." method="OnMouseEntered"]
+[connection signal="mouse_exited" from="." to="." method="OnMouseExited"]

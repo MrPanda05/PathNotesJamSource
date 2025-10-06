@@ -1,13 +1,79 @@
-[gd_resource type="Resource" script_class="DialogueList" load_steps=4 format=3 uid="uid://cp81mu4yyrcxr"]
+[gd_resource type="Resource" script_class="DialogueList" load_steps=19 format=3 uid="uid://cp81mu4yyrcxr"]
 
 [ext_resource type="Script" uid="uid://cpauhn8r7ewin" path="res://Story/Dialogues/Dialogue.cs" id="1_q5fw3"]
 [ext_resource type="Script" uid="uid://c8p1ou8ir7qy1" path="res://Story/Dialogues/DialogueList.cs" id="1_qusfm"]
+[ext_resource type="Texture2D" uid="uid://dyvuc73h0qk2p" path="res://Art/DragonGrill/DragonGirlFace1Chill.png" id="1_svrg5"]
+[ext_resource type="Texture2D" uid="uid://ccs8wch3khyud" path="res://Art/DragonGrill/DragonGirlFace4Chill2.png" id="3_gcwma"]
+[ext_resource type="Texture2D" uid="uid://jn7swp8rjfiv" path="res://Art/DragonGrill/DragonGirlFace4Chill.png" id="4_2mn2a"]
+[ext_resource type="Texture2D" uid="uid://cx8kjfuoqqb8l" path="res://Art/DragonGrill/DragonGirlFace5Angry.png" id="5_7uosc"]
+[ext_resource type="Texture2D" uid="uid://c56mh5ktvatbv" path="res://Art/DragonGrill/DragonGirlFace4Blush.png" id="6_d8jp7"]
+[ext_resource type="Texture2D" uid="uid://cuild8qvnkcrs" path="res://Art/DragonGrill/DragonGirlFace2Angry.png" id="7_svrg5"]
+[ext_resource type="Texture2D" uid="uid://d2k3bpyxoplju" path="res://Art/DragonGrill/DragonGirlFace3Chill.png" id="8_gcwma"]
 
 [sub_resource type="Resource" id="Resource_q5fw3"]
 script = ExtResource("1_q5fw3")
+Author = "Lizzy"
+Speach = "See, wasn't to difficult, was it?"
+Sprite = ExtResource("1_svrg5")
+metadata/_custom_type_script = "uid://cpauhn8r7ewin"
+
+[sub_resource type="Resource" id="Resource_v5tme"]
+script = ExtResource("1_q5fw3")
+Author = "Lizzy"
+Speach = "Now, give me the gel!"
+Sprite = ExtResource("3_gcwma")
+metadata/_custom_type_script = "uid://cpauhn8r7ewin"
+
+[sub_resource type="Resource" id="Resource_ny5b0"]
+script = ExtResource("1_q5fw3")
+Author = "Lizzy"
+Speach = "Perfect! My skin will be perfect smooth after using it!"
+Sprite = ExtResource("4_2mn2a")
+metadata/_custom_type_script = "uid://cpauhn8r7ewin"
+
+[sub_resource type="Resource" id="Resource_r8jwu"]
+script = ExtResource("1_q5fw3")
+Author = "Lizzy"
+Speach = "No you perv! you can't see me using it!"
+Sprite = ExtResource("5_7uosc")
+metadata/_custom_type_script = "uid://cpauhn8r7ewin"
+
+[sub_resource type="Resource" id="Resource_wcmcv"]
+script = ExtResource("1_q5fw3")
+Author = "Lizzy"
+Speach = " Now my deer knight, I am feeling very thirsty and I would've like very special drink!"
+Sprite = ExtResource("1_svrg5")
+metadata/_custom_type_script = "uid://cpauhn8r7ewin"
+
+[sub_resource type="Resource" id="Resource_7m1ym"]
+script = ExtResource("1_q5fw3")
+Author = "Lizzy"
+Speach = "I want to relax, I need you to bring me the very special green orange! I've heard it makes a very tasty and refreshing juice!"
+Sprite = ExtResource("6_d8jp7")
+metadata/_custom_type_script = "uid://cpauhn8r7ewin"
+
+[sub_resource type="Resource" id="Resource_601gr"]
+script = ExtResource("1_q5fw3")
+Author = "Lizzy"
+Speach = "Water?? I do not want water you stupid!!"
+Sprite = ExtResource("7_svrg5")
+metadata/_custom_type_script = "uid://cpauhn8r7ewin"
+
+[sub_resource type="Resource" id="Resource_2mn2a"]
+script = ExtResource("1_q5fw3")
+Author = "Lizzy"
+Speach = "I swear I will break your balls or something...."
+Sprite = ExtResource("8_gcwma")
+metadata/_custom_type_script = "uid://cpauhn8r7ewin"
+
+[sub_resource type="Resource" id="Resource_7uosc"]
+script = ExtResource("1_q5fw3")
+Author = "Lizzy"
+Speach = "Anyway, go on on your journey! I've have better stuff to do right now!"
+Sprite = ExtResource("1_svrg5")
 metadata/_custom_type_script = "uid://cpauhn8r7ewin"
 
 [resource]
 script = ExtResource("1_qusfm")
-Dialogues = Array[Object]([SubResource("Resource_q5fw3")])
+Dialogues = Array[Object]([SubResource("Resource_q5fw3"), SubResource("Resource_v5tme"), SubResource("Resource_ny5b0"), SubResource("Resource_r8jwu"), SubResource("Resource_wcmcv"), SubResource("Resource_7m1ym"), SubResource("Resource_601gr"), SubResource("Resource_2mn2a"), SubResource("Resource_7uosc")])
 metadata/_custom_type_script = "uid://c8p1ou8ir7qy1"

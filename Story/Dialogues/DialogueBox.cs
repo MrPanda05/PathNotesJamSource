@@ -65,6 +65,10 @@ namespace Story.Dialogues
 
         private void DialogueEnded()
         {
+            if(_bookDialogue.FlirtList == null || _bookDialogue.TalkList == null)
+            {
+                GameManager.Instance.CloseGame();
+            }
             _dialogueControl.Visible = false;
             IsAnDialogueActive = false;
             Buttons.Visible = true;

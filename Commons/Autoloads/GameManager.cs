@@ -33,7 +33,10 @@ namespace Commons.Autoloads
         public Action OnNullEnter;
         public Action OnNullExit;
 
-
+        public void CloseGame()
+        {
+            GetTree().Quit();
+        }
         public override void _Ready()
         {
             if (Instance != null)

@@ -14,6 +14,7 @@ _dialogueBox = NodePath("CanvasLayer/DialogueBox")
 dialogues = Array[Object]([ExtResource("2_rcqax"), ExtResource("3_vnb6l"), ExtResource("4_joskl"), ExtResource("5_vnb6l")])
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="TetsButton" type="Button" parent="CanvasLayer"]
 visible = false

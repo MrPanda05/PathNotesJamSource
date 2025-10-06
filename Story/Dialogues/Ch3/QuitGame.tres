@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="DeleteDialogue" load_steps=3 format=3 uid="uid://cq6rgcj3ek8k5"]
+
+[ext_resource type="Script" uid="uid://xmsck04hd4wf" path="res://Story/Dialogues/DeleteDialogue.cs" id="1_bm84e"]
+[ext_resource type="Texture2D" uid="uid://x0wh3hwf1teu" path="res://Art/DragonGirlDistortion3.png" id="1_ughag"]
+
+[resource]
+script = ExtResource("1_bm84e")
+Author = "?????"
+Speach = "YOU WANTED THIS!!"
+Sprite = ExtResource("1_ughag")
+metadata/_custom_type_script = "uid://xmsck04hd4wf"

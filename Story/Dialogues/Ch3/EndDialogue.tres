@@ -1,13 +1,83 @@
-[gd_resource type="Resource" script_class="DialogueList" load_steps=4 format=3 uid="uid://cat3p1qee6drh"]
+[gd_resource type="Resource" script_class="DialogueList" load_steps=23 format=3 uid="uid://cat3p1qee6drh"]
 
+[ext_resource type="Texture2D" uid="uid://dyvuc73h0qk2p" path="res://Art/DragonGrill/DragonGirlFace1Chill.png" id="1_1l6ir"]
 [ext_resource type="Script" uid="uid://c8p1ou8ir7qy1" path="res://Story/Dialogues/DialogueList.cs" id="1_4lv1u"]
+[ext_resource type="Texture2D" uid="uid://cmnn16cssl362" path="res://Art/DragonGrill/DragonGirlFace1Love.png" id="1_n2l4v"]
 [ext_resource type="Script" uid="uid://cpauhn8r7ewin" path="res://Story/Dialogues/Dialogue.cs" id="1_tqe2j"]
+[ext_resource type="Script" uid="uid://dw3nvxrblhr0k" path="res://Story/Dialogues/ChangeMusicDialogue.cs" id="2_awktj"]
+[ext_resource type="Resource" uid="uid://cq6rgcj3ek8k5" path="res://Story/Dialogues/Ch3/QuitGame.tres" id="2_hyola"]
+[ext_resource type="Texture2D" uid="uid://dfgtmxlk5q03k" path="res://Art/DragonGrill/DragonGirlFace3Chill2.png" id="3_ibjdb"]
+[ext_resource type="Texture2D" uid="uid://c56mh5ktvatbv" path="res://Art/DragonGrill/DragonGirlFace4Blush.png" id="5_u47y5"]
+[ext_resource type="Texture2D" uid="uid://b3r4n3an4y74a" path="res://Art/DragonGrill/DragonGirlFace3Blush.png" id="6_vio60"]
+[ext_resource type="Texture2D" uid="uid://cx8kjfuoqqb8l" path="res://Art/DragonGrill/DragonGirlFace5Angry.png" id="7_yjhh1"]
+[ext_resource type="Texture2D" uid="uid://cokn7xug3wg02" path="res://Art/DragonGrill/DragonGirlFace5Love.png" id="8_a5g0f"]
+[ext_resource type="Texture2D" uid="uid://cg5ss7xosocm8" path="res://Art/DragonGirlLovedistortion.png" id="10_wn201"]
+[ext_resource type="Texture2D" uid="uid://by6qhnmeecs4t" path="res://Art/DragonGirlDistortion2.png" id="11_um83x"]
 
-[sub_resource type="Resource" id="Resource_tqe2j"]
+[sub_resource type="Resource" id="Resource_hx5e3"]
+script = ExtResource("2_awktj")
+Author = "Lizzy"
+Speach = "Hey, you're back!"
+Sprite = ExtResource("1_1l6ir")
+metadata/_custom_type_script = "uid://dw3nvxrblhr0k"
+
+[sub_resource type="Resource" id="Resource_grt8x"]
 script = ExtResource("1_tqe2j")
+Author = "Lizzy"
+Speach = "I was worried..."
+Sprite = ExtResource("3_ibjdb")
+metadata/_custom_type_script = "uid://cpauhn8r7ewin"
+
+[sub_resource type="Resource" id="Resource_jg2ih"]
+script = ExtResource("1_tqe2j")
+Author = "Lizzy"
+Speach = "What.... n-no... not like that...."
+Sprite = ExtResource("5_u47y5")
+metadata/_custom_type_script = "uid://cpauhn8r7ewin"
+
+[sub_resource type="Resource" id="Resource_5ocri"]
+script = ExtResource("1_tqe2j")
+Author = "Lizzy"
+Speach = "........"
+Sprite = ExtResource("6_vio60")
+metadata/_custom_type_script = "uid://cpauhn8r7ewin"
+
+[sub_resource type="Resource" id="Resource_utrbr"]
+script = ExtResource("1_tqe2j")
+Author = "Lizzy"
+Speach = "Hmm.... f-fine... I like you...."
+Sprite = ExtResource("7_yjhh1")
+metadata/_custom_type_script = "uid://cpauhn8r7ewin"
+
+[sub_resource type="Resource" id="Resource_pogto"]
+script = ExtResource("1_tqe2j")
+Author = "Lizzy"
+Speach = "Don't you love me too??"
+Sprite = ExtResource("8_a5g0f")
+metadata/_custom_type_script = "uid://cpauhn8r7ewin"
+
+[sub_resource type="Resource" id="Resource_lqxgr"]
+script = ExtResource("1_tqe2j")
+Author = "Lizzy"
+Speach = "We're mean to be together......."
+Sprite = ExtResource("1_n2l4v")
+metadata/_custom_type_script = "uid://cpauhn8r7ewin"
+
+[sub_resource type="Resource" id="Resource_ajqxo"]
+script = ExtResource("1_tqe2j")
+Author = "Lizzy"
+Speach = "Are you afraid? don't be....you....you"
+Sprite = ExtResource("10_wn201")
+metadata/_custom_type_script = "uid://cpauhn8r7ewin"
+
+[sub_resource type="Resource" id="Resource_uyw8g"]
+script = ExtResource("1_tqe2j")
+Author = "?????"
+Speach = "You wanted this..."
+Sprite = ExtResource("11_um83x")
 metadata/_custom_type_script = "uid://cpauhn8r7ewin"
 
 [resource]
 script = ExtResource("1_4lv1u")
-Dialogues = Array[Object]([SubResource("Resource_tqe2j")])
+Dialogues = Array[Object]([SubResource("Resource_hx5e3"), SubResource("Resource_grt8x"), SubResource("Resource_jg2ih"), SubResource("Resource_5ocri"), SubResource("Resource_utrbr"), SubResource("Resource_pogto"), SubResource("Resource_lqxgr"), SubResource("Resource_ajqxo"), SubResource("Resource_uyw8g"), ExtResource("2_hyola")])
 metadata/_custom_type_script = "uid://c8p1ou8ir7qy1"

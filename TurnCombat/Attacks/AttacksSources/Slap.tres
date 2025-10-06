@@ -6,6 +6,6 @@
 script = ExtResource("1_ipcu3")
 AttackName = "Slap"
 Description = "Slap opponents face"
-Damage = 10
-StaminaCost = 10
+Damage = 30
+StaminaCost = 40
 metadata/_custom_type_script = "uid://okkawhpqdogh"
